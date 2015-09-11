@@ -24,7 +24,6 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * DESCRIPTION:
  * Sequentially iterates over a Date range at 23:59:59 on the last day of each month.
  */
 public class MonthIterator implements Iterator<Month> {
@@ -36,10 +35,9 @@ public class MonthIterator implements Iterator<Month> {
 	private Month end;
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of MonthIterator.
-	 * @param dateStart - the starting date
-	 * @param dateEnd - the ending date
+	 * @param dateStart The starting date
+	 * @param dateEnd The ending date
 	 */
 	public MonthIterator(Date dateStart, Date dateEnd) {
 		next = new Month(dateStart);
@@ -47,7 +45,6 @@ public class MonthIterator implements Iterator<Month> {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns true if there is at least one more month, false otherwise.
 	 * @see java.util.Iterator#hasNext()
 	 */
@@ -57,7 +54,6 @@ public class MonthIterator implements Iterator<Month> {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the next month and advances the iterator.
 	 * @throws NoSuchElementException if there are no more months. 
 	 * @see java.util.Iterator#next()
@@ -71,7 +67,6 @@ public class MonthIterator implements Iterator<Month> {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Element removal is not supported by this iterator.
 	 * @throws UnsupportedOperationException 
 	 * @see java.util.Iterator#remove()

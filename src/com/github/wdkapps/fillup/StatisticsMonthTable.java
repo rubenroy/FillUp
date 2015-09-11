@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * DESCRIPTION:
  * A table for display of statistics derived from one month of trip data.
  */
 public class StatisticsMonthTable implements HtmlData {
@@ -53,10 +52,9 @@ public class StatisticsMonthTable implements HtmlData {
 	private static final String newline = System.getProperty("line.separator");
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of StatisticsReportTable.
-	 * @param data - the trip data used to generate the table 
-	 * @param title - the table title.
+	 * @param data The trip data used to generate the table 
+	 * @param title The table title.
 	 */
 	public StatisticsMonthTable(TripRecord data, String title) {
 		this.data = data;
@@ -67,7 +65,6 @@ public class StatisticsMonthTable implements HtmlData {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns the table as an HTML String.
 	 * @see com.github.wdkapps.fillup.HtmlData#getHtml()
 	 */
@@ -77,7 +74,6 @@ public class StatisticsMonthTable implements HtmlData {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Generates an HTML table from the data.
 	 */
 	private void createTable() {
@@ -95,11 +91,10 @@ public class StatisticsMonthTable implements HtmlData {
 	}	
 
 	/**
-	 * DESCRIPTION:
 	 * Generates a generic HTML table header row consisting of a single
 	 * cell that spans a specified number of table columns.
-	 * @param cell - the header cell content as a String.
-	 * @param colspan - the number of table columns that the header cell spans
+	 * @param cell The header cell content as a String.
+	 * @param colspan The number of table columns that the header cell spans
 	 */
 	private void appendTableHeaderRow(String cell, String colspan) {
 		html.append("<tr"+property("class",cssClass)+">").append(newline);
@@ -108,10 +103,9 @@ public class StatisticsMonthTable implements HtmlData {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Generates a generic HTML table row.<p>
 	 * NOTE: marks odd numbered rows to support alternating colors for older browsers.
-	 * @param cells - the cell content for the row (each cell is one table column).
+	 * @param cells The cell content for the row (each cell is one table column).
 	 */
 	private void appendTableRow(String[] cells) {
 		if ((row & 1) == 1) {
@@ -127,7 +121,6 @@ public class StatisticsMonthTable implements HtmlData {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Appends distance statistical data to the table.
 	 */
 	private void appendDistanceData() {
@@ -140,7 +133,6 @@ public class StatisticsMonthTable implements HtmlData {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Appends cost statistical data to the table.
 	 */
 	private void appendCostData() {
@@ -162,7 +154,6 @@ public class StatisticsMonthTable implements HtmlData {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Appends gallons statistical data to the table.
 	 */
 	private void appendGallonsData() {
@@ -175,7 +166,6 @@ public class StatisticsMonthTable implements HtmlData {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Appends price statistical data to the table.
 	 */
 	private void appendPriceData() {
@@ -191,7 +181,6 @@ public class StatisticsMonthTable implements HtmlData {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Appends mileage statistical data to the table.
 	 */
 	private void appendMileageData() {
@@ -233,21 +222,19 @@ public class StatisticsMonthTable implements HtmlData {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns an HTML property definition in the form of: attribute="value".
-	 * @param attribute - the attribute name of the property.
-	 * @param value - the value to be assigned to the property.
-	 * @return the property definition String.
+	 * @param attribute The attribute name of the property.
+	 * @param value The value to be assigned to the property.
+	 * @return The property definition String.
 	 */
 	private String property(String attribute, String value) {
 		return String.format(" %s=\"%s\"", attribute, value);
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Convenience method to retrieve a String resource.
-	 * @param id - the desired resource identifier. 
-	 * @return the String data associated with the resource.
+	 * @param id The desired resource identifier.
+	 * @return The String data associated with the resource. 
 	 * @see android.content.res.Resources#getString(int id)
 	 */
 	private String getString(int id) {

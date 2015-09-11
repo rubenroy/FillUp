@@ -45,7 +45,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 /**
- * DESCRIPTION:
  * Implements an Android Activity class to display a list of 
  * gasoline records contained within a gas log database. Provides
  * a user interface to manipulate records in the log.
@@ -81,7 +80,6 @@ implements ConfirmationDialog.Listener,
 	private GasLogListAdapter adapter;
 	
     /**
-     * DESCRIPTION:
      * Called when the activity is starting.
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -123,7 +121,6 @@ implements ConfirmationDialog.Listener,
     }
 
     /**
-     * DESCRIPTION:
      * Initialize the Activity's standard options menu. This is only called 
      * once, the first time the options menu is displayed. 
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
@@ -135,7 +132,6 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Prepare the Activity's standard options menu to be displayed. This 
      * is called right before the menu is shown, every time it is shown, 
      * and can therefore be used to efficiently enable/disable items or 
@@ -150,7 +146,6 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Called when an item in the options menu is selected.
      * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
      */
@@ -191,7 +186,6 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Called every time the context menu is about to be shown.
      * @see android.app.Activity#onCreateContextMenu(android.view.ContextMenu, android.view.View, android.view.ContextMenu.ContextMenuInfo)
      */
@@ -230,7 +224,6 @@ implements ConfirmationDialog.Listener,
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Called when a record in the list is clicked.
 	 * @see android.widget.AdapterView.OnItemClickListener#onItemClick(android.widget.AdapterView, android.view.View, int, long)
 	 */
@@ -241,7 +234,6 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Called when an item in a context menu is selected.
      * @see android.app.Activity#onContextItemSelected(android.view.MenuItem)
      */
@@ -283,9 +275,8 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Toggle the "hidden calculation" attribute of the specified gas record.
-     * @param record - the gas record.
+     * @param record The gas record.
      */
     protected void toggleHiddenCalculation(GasRecord record) {
     	boolean hidden = record.isCalculationHidden();
@@ -298,7 +289,6 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Imports data from an ASCII CSV file into the log.
      */
     protected void importData(Uri uri) {
@@ -323,9 +313,8 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Return the name and path to a file for exporting log data.
-     * @return the File.
+     * @return The File.
      */
     protected File getExportFile() {
     	
@@ -338,7 +327,6 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Allow user to select a file to import using an installed cloud application.
      */
     private void showCloudStorageChooser() {
@@ -354,7 +342,6 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Allow the user to select a file to import from internal storage.
      */
     private void showInternalStorageChooser() {
@@ -374,7 +361,6 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Exports data from the log to an ASCII CSV file.
      */
     protected void exportData() {
@@ -396,11 +382,10 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Called when the user requests that a gasoline record be added to 
      * the log. Starts a new Activity to allow the user to enter the data. 
      * 
-     * @param view - the View that activated this method (button click, etc).
+     * @param view The View that activated this method (button click, etc).
      */
     protected void getGas(View view) {
     	Intent intent = new Intent(this, GasRecordActivity.class);
@@ -413,10 +398,9 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Called when the user finishes entering data for a gasoline record
      * to add to the log.
-     * @param record - the GasRecord data entered by the user.
+     * @param record The GasRecord data entered by the user.
      */
     protected void onGetGasResult(GasRecord record) {
     	
@@ -469,7 +453,6 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Called when the user requests to edit a specific gasoline record.
      * Starts new Activity to allow the user to edit the data.
      */
@@ -482,9 +465,8 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Called when the user finishes editing data for a gasoline record.
-     * @param record - the GasRecord data edited by the user.
+     * @param record The GasRecord data edited by the user.
      */
     protected void onEditRowResult(GasRecord record) {
 		if (gaslog.updateRecord(record)) {
@@ -497,7 +479,6 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Called when the user has selected a gasoline record to delete
      * from the log and has confirmed deletion.
      */
@@ -525,7 +506,6 @@ implements ConfirmationDialog.Listener,
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Request code constants for onActivityResult()
 	 * @see #onActivityResult(int, int, Intent)
 	 */
@@ -534,7 +514,6 @@ implements ConfirmationDialog.Listener,
 	private static final int CHOOSE_IMPORT_FILE = 3;
     
     /**
-     * DESCRIPTION:
      * Called when an activity launched by this activity exits, giving the 
      * requestCode it was started with, the resultCode it returned, and any 
      * additional data from it.
@@ -580,7 +559,6 @@ implements ConfirmationDialog.Listener,
     }
     
     /**
-     * DESCRIPTION:
      * Dialog box integer ID constants
      * @see #onCreateDialog(int)
      */
@@ -593,7 +571,6 @@ implements ConfirmationDialog.Listener,
     protected static final int DIALOG_CONFIRM_EXPORT_SHARE_ID = 7;
     
     /** 
-     * DESCRIPTION: 
      * Called as needed by the framework to create dialog boxes used by the Activity.
      * Each dialog box is referenced by a locally defined id integer. 
      * 
@@ -649,7 +626,6 @@ implements ConfirmationDialog.Listener,
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Called when a confirmation dialog gets a response from the user.
 	 * @see com.github.wdkapps.fillup.ConfirmationDialog.Listener#onConfirmationDialogResponse(int, boolean)
 	 */
@@ -684,9 +660,8 @@ implements ConfirmationDialog.Listener,
 	}
 
 	/**
- 	 * DESCRIPTION:
 	 * Called when the user selects a file.
-	 * @see com.github.wdkapps.fillup.FileSelectionDialog.Listener#onFileSelectionDialogResponse(int, java.io.File)
+	 * @see com.github.wdkapps.fillup.StorageSelectionDialog.Listener#onStorageSelectionDialogResponse(int, StorageSelectionDialog.Result, String)
 	 */
 	@Override
 	public void onStorageSelectionDialogResponse(int id, StorageSelectionDialog.Result result, String value) {
@@ -713,7 +688,6 @@ implements ConfirmationDialog.Listener,
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Updates the column header labels to the reflect the preferred
 	 * units for distance, liquid volume, etc.
 	 */
@@ -726,7 +700,6 @@ implements ConfirmationDialog.Listener,
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Called when a shared preference value changes.
 	 * @see android.content.SharedPreferences.OnSharedPreferenceChangeListener#onSharedPreferenceChanged(android.content.SharedPreferences, java.lang.String)
 	 */
@@ -746,7 +719,6 @@ implements ConfirmationDialog.Listener,
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Save current state data.
 	 * NOTE: This gets called when the screen is rotated. The
 	 * Activity is then destroyed, re-created, and state restored.
@@ -759,7 +731,6 @@ implements ConfirmationDialog.Listener,
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Restore previously saved state data.
 	 * @see android.app.Activity#onRestoreInstanceState(android.os.Bundle)
 	 */

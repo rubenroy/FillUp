@@ -23,7 +23,6 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 
 /**
- * DESCRIPTION:
  * Wrapper for TextWatcher instances to monitor the status of the various
  * gas record form EditText fields. The EditText API does not provide a mechanism 
  * to remove all attached TextWatcher instances. We must remember what we added, and
@@ -46,12 +45,11 @@ public abstract class GasRecordWatcher {
 	private TextWatcher gallonsWatcher;
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of GasRecordWatcher.
-	 * @param mode - current data entry mode
-	 * @param price - EditText to monitor
-	 * @param cost - EditText to monitor
-	 * @param gallons - EditText to monitor
+	 * @param mode Current data entry mode
+	 * @param price EditText to monitor
+	 * @param cost EditText to monitor
+	 * @param gallons EditText to monitor
 	 */
 	public GasRecordWatcher(DataEntryMode mode, EditText price, EditText cost, EditText gallons) {
 		this.editTextPrice = price;
@@ -76,7 +74,6 @@ public abstract class GasRecordWatcher {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Removes all TextWatcher instances in use.
 	 */
 	public void destroy() {
@@ -94,7 +91,6 @@ public abstract class GasRecordWatcher {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Creates a TextWatcher to listen for and handle changes for the
 	 * price EditText.
 	 * @return TextWatcher
@@ -110,7 +106,6 @@ public abstract class GasRecordWatcher {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Creates a TextWatcher to listen for and handle changes for the
 	 * cost EditText.
 	 * @return TextWatcher
@@ -126,7 +121,6 @@ public abstract class GasRecordWatcher {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Creates a TextWatcher to listen for and handle changes for the
 	 * gallons EditText.
 	 * @return TextWatcher
@@ -142,19 +136,16 @@ public abstract class GasRecordWatcher {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Called after the price EditText content has changed.
 	 */
 	public abstract void priceChanged();
 	
 	/**
-	 * DESCRIPTION:
 	 * Called after the cost EditText content has changed.
 	 */
 	public abstract void costChanged();
 	
 	/**
-	 * DESCRIPTION:
 	 * Called after the cost EditText content has changed.
 	 */
 	public abstract void gallonsChanged();

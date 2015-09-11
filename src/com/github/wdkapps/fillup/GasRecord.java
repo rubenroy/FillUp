@@ -27,14 +27,12 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * DESCRIPTION:
  * A gasoline log entry to document the details of a gasoline purchase. 
  * It records: purchase date, odometer reading, amount of fuel purchased, etc.
  * Needs to be Serializable in order to pass between Activity instances via 
  * an Intent instance.
  */
 /**
- * DESCRIPTION:
  *
  */
 public class GasRecord implements Serializable {
@@ -98,7 +96,6 @@ public class GasRecord implements Serializable {
     private Object[] hash;
     
 	/**
-	 * DESCRIPTION:
 	 * Constructs a 'blank' instance of GasRecord.
 	 */
 	public GasRecord() {
@@ -116,9 +113,8 @@ public class GasRecord implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs a copy of an existing GasRecord.
-	 * @param that - the existing GasRecord instance to copy.
+	 * @param that The existing GasRecord instance to copy.
 	 */
 	public GasRecord(GasRecord that) {
 		this.id = that.id;
@@ -136,9 +132,8 @@ public class GasRecord implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an GasRecord instance for a specific vehicle.
-	 * @param vehicle - the Vehicle that the record pertains to.
+	 * @param vehicle The Vehicle that the record pertains to.
 	 */
 	public GasRecord(Vehicle vehicle) {
 		this();
@@ -146,7 +141,6 @@ public class GasRecord implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of GasRecord reflecting values specified
 	 * by an ASCII comma-separated-values (CSV) String.<p>
 	 * 
@@ -164,7 +158,7 @@ public class GasRecord implements Serializable {
 	 * are ignored in this constructor and re-calculated later if necessary. 
 	 * </ol>
 	 * 
-	 * @param csv - the ASCI CSV String that specified the record's values.
+	 * @param csv The ASCI CSV String that specified the record's values.
 	 * @throws ParseException if parse of CSV fails.
 	 * @throws NumberFormatException if CSV contains invalid numeric values.
 	 */
@@ -203,7 +197,6 @@ public class GasRecord implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Calculates price based on the current values for cost and gallons.
  	 * @throws NumberFormatException if the calculated value is not a valid price value.
 	 */
@@ -216,7 +209,6 @@ public class GasRecord implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Calculates gallons based on the current values for cost and price.
 	 * @throws NumberFormatException if the calculated value is not a valid gallons value.
 	 */
@@ -229,7 +221,6 @@ public class GasRecord implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Calculates cost based on the current values for gallons and price.
 	 * @throws NumberFormatException if the calculated value is not a valid cost value.
 	 */
@@ -239,63 +230,56 @@ public class GasRecord implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the id attribute.
-	 * @return Integer - the id value.
+	 * @return The id value.
 	 */
 	public Integer getID() {
 		return id;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the id attribute.
-	 * @param id - the Integer id value.
+	 * @param id The Integer id value.
 	 */
 	public void setID(Integer id) {
 		this.id = id;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the vehicle id attribute.
-	 * @return Integer - the vehicle id value.
+	 * @return The vehicle id value.
 	 */
 	public Integer getVehicleID() {
 		return vid;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the vehicle id attribute.
-	 * @param vid - the Integer vehicle id value.
+	 * @param vid The Integer vehicle id value.
 	 */
 	public void setVehicleID(Integer vid) {
 		this.vid = vid;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the date attribute.
-	 * @return Date - the date value
+	 * @return Date The date value
 	 */
 	public Date getDate() {
 		return date;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the date attribute as a String value.
-	 * @return String - the date value (MM/dd/yyyy).
+	 * @return The date value (MM/dd/yyyy).
 	 */
 	public String getDateString() {
 		return dateFormatter.format(date);
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the date attribute as a date/time String value.
-	 * @return String - the date/time value.
+	 * @return The date/time value.
 	 */
 	public String getDateTimeString() {
 		StringBuffer sb = new StringBuffer();
@@ -306,27 +290,24 @@ public class GasRecord implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the date attribute as a String value.
-	 * @return String - the date/time value (MM/dd/yyyy HH:mm).
+	 * @return The date/time value (MM/dd/yyyy HH:mm).
 	 */
 	private String getCsvDateTimeString() {
 		return csvDateTimeFormatter.format(date);
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the date attribute.
-	 * @param date - the Date value.
+	 * @param date The Date value.
 	 */
 	public void setDate(Date date) {
 		this.date = date;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the date attribute.
-	 * @param date - the date/time as a String value.
+	 * @param date The date/time as a String value.
 	 * @throws ParseException if the String is not a valid date/time or date.
 	 */
 	private void setCsvDateTime(String date) throws ParseException {
@@ -340,36 +321,32 @@ public class GasRecord implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the odometer attribute.
-	 * @return Integer - the odometer value.
+	 * @return The odometer value.
 	 */
 	public Integer getOdometer() {
 		return odometer;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the odometer attribute as a String value.
-	 * @return String - the odometer value. 
+	 * @return The odometer value. 
 	 */
 	public String getOdometerString() {
 		return odometer.toString();
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the odometer attribute.
-	 * @param odometer - the odometer value as an Integer.
+	 * @param odometer The odometer value as an Integer.
 	 */
 	public void setOdometer(Integer odometer) {
 		this.odometer = odometer;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the odometer attribute as a String value.
-	 * @param odometer - the odometer String value.
+	 * @param odometer The odometer String value.
 	 * @throws NumberFormatException if the String is not a valid odometer value.
 	 */
 	public void setOdometer(String odometer) throws NumberFormatException {
@@ -381,36 +358,32 @@ public class GasRecord implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the gallons attribute.
-	 * @return Float - the gallons value.
+	 * @return The gallons value.
 	 */
 	public Float getGallons() {
 		return gallons;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the gallons attribute as a String value.
-	 * @return String - the gallons value.
+	 * @return The gallons value.
 	 */
 	public String getGallonsString() {
 		return String.format(App.getLocale(),"%.3f",gallons);
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the gallons attribute.
-	 * @param gallons - the gallons value as a Float.
+	 * @param gallons The gallons value as a Float.
 	 */
 	public void setGallons(Float gallons) {
 		this.gallons = gallons;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the gallons attribute.
-	 * @param gallons - the gallons attribute as a String value.
+	 * @param gallons The gallons attribute as a String value.
 	 * @throws NumberFormatException if the String is not a valid gallons value.
 	 */
 	public void setGallons(String gallons) throws NumberFormatException {
@@ -423,36 +396,32 @@ public class GasRecord implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the cost attribute.
-	 * @return Double - the cost value.
+	 * @return The cost value.
 	 */
 	public Double getCost() {
 		return cost;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the cost attribute as a String value.
-	 * @return String - the cost value.
+	 * @return The cost value.
 	 */
 	public String getCostString() {
 		return CurrencyManager.getInstance().getNumericFormatter().format(cost);
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the cost attribute.
-	 * @param cost - the cost value as a Double.
+	 * @param cost The cost value as a Double.
 	 */
 	public void setCost(Double cost) {
 		this.cost = cost;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the cost attribute.
-	 * @param cost - the cost attribute as a String value.
+	 * @param cost The cost attribute as a String value.
 	 * @throws NumberFormatException if the String is not a valid cost value.
 	 */
 	public void setCost(String cost) throws NumberFormatException {
@@ -465,25 +434,22 @@ public class GasRecord implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the calculated price per gallon value.
-	 * @return Double - the cost per gallon value.
+	 * @return The cost per gallon value.
 	 */
 	public Double getPrice() {
 		return price;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the price per gallon attribute as a String value.
-	 * @return String - the price value.
+	 * @return The price value.
 	 */
 	public String getPriceString() {
 		return CurrencyManager.getInstance().getNumericFractionalFormatter().format(price);
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the price per gallon attribute.
 	 * <p>
 	 * NOTE: 
@@ -491,14 +457,13 @@ public class GasRecord implements Serializable {
 	 * ratio of cost and gallons. This setter method is provided
 	 * to assist data entry.
 	 * </p>
-	 * @param price - the price attribute as a Double.
+	 * @param price The price attribute as a Double.
 	 */
 	private void setPrice(Double price) {
 		this.price = price;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the price per gallon attribute.
 	 * <p>
 	 * NOTE: 
@@ -506,7 +471,7 @@ public class GasRecord implements Serializable {
 	 * ratio of cost and gallons. This setter method is provided
 	 * to assist data entry.
 	 * </p>
-	 * @param price - the price attribute as a String value.
+	 * @param price The price attribute as a String value.
 	 * @throws NumberFormatException if the String is not a valid price value.
 	 */
 	public void setPrice(String price) {
@@ -519,18 +484,16 @@ public class GasRecord implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the notes attribute.
-	 * @return String - the notes attribute value.
+	 * @return The notes attribute value.
 	 */
 	public String getNotes() {
 		return this.notes;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the notes attribute.
-	 * @param notes - the notes value as a String.
+	 * @param notes The notes value as a String.
 	 */
 	public void setNotes(String notes) {
 		if (notes == null) notes = "";
@@ -538,79 +501,70 @@ public class GasRecord implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the full tank attribute. 
-	 * @return Boolean indicating whether the tank was full after purchase (true=full)
+	 * @return Indicates whether the tank was full after purchase (true=full)
 	 */
 	public Boolean isFullTank() {
 		return fulltank;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the full tank attribute.
-	 * @param fulltank - the Boolean full tank value.
+	 * @param fulltank The Boolean full tank value.
 	 */
 	public void setFullTank(Boolean fulltank) {
 		this.fulltank = fulltank;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the full tank attribute. 
-	 * @param fulltank - the full tank attribute as a String value ("true","false")
+	 * @param fulltank The full tank attribute as a String value ("true","false")
 	 */
 	public void setFullTank(String fulltank) {
 		this.fulltank = Boolean.parseBoolean(fulltank);
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the calculation hidden attribute. 
-	 * @return Boolean indicating whether the calculation is hidden (true=hidden)
+	 * @return Indicates whether the calculation is hidden (true=hidden)
 	 */
 	public Boolean isCalculationHidden() {
 		return hidden;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the calculation hidden attribute. 
-	 * @param hidden - the Boolean hidden value.
+	 * @param hidden The Boolean hidden value.
 	 */
 	public void setHiddenCalculation(Boolean hidden) {
 		this.hidden = hidden;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the calculation hidden attribute. 
-	 * @param hidden - the hidden attribute as a String value ("true","false")
+	 * @param hidden The hidden attribute as a String value ("true","false")
 	 */
 	public void setHiddenCalculation(String hidden) {
 		this.hidden = Boolean.parseBoolean(hidden);
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the mileage calculation attribute.
-	 * @return the MileageCalculation instance (null=no calculation).
+	 * @return The MileageCalculation instance (null=no calculation).
 	 */
 	public MileageCalculation getCalculation() {
 		return calc;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the mileage calculation attribute.
-	 * @param calc - the MileageCalculation instance.
+	 * @param calc The MileageCalculation instance.
 	 */
 	public void setCalculation(MileageCalculation calc) {
 		this.calc = calc;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Indicates whether the record has a mileage calculation.
 	 * @return true if mileage calculation is available.
 	 */
@@ -619,7 +573,6 @@ public class GasRecord implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns an ASCII CSV String representation of the record.
 	 * @return String reflecting record attribute values.
 	 */
@@ -642,7 +595,6 @@ public class GasRecord implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns a String representation of the record for debug/logging purposes.
 	 * @see java.lang.Object#toString()
 	 */
@@ -663,10 +615,9 @@ public class GasRecord implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Constructs an array of all attributes to be considered in
 	 * hash code calculations for this record.
-	 * @return an Object[] of attributes to be hashed.
+	 * @return An Object[] of attributes to be hashed.
 	 */
 	private Object[] getHashArray() {
 
@@ -690,10 +641,9 @@ public class GasRecord implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Calculates an integer hash code for this record. 
 	 * @see java.lang.Object#hashCode()
-	 * @return the integer hash code.
+	 * @return The integer hash code.
 	 */
 	@Override
 	public int hashCode() {
@@ -701,11 +651,10 @@ public class GasRecord implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Compares this instance with the specified object and indicates 
 	 * if they are equal. 
+	 * @return true if the specified object is equal to this record; false otherwise.
 	 * @see java.lang.Object#equals(java.lang.Object)
-	 * @return if the specified object is equal to this record; false otherwise.
 	 */
 	@Override
 	public boolean equals(Object obj) {

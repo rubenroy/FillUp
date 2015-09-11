@@ -23,7 +23,6 @@ import java.io.Serializable;
 import android.content.res.Resources;
 
 /**
- * DESCRIPTION:
  * Represents a preference value that specifies the default mode for data
  * entry. Obtains the current preference value from Settings.
  */
@@ -47,9 +46,8 @@ public class DataEntryMode implements Serializable {
 	private String summary;
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of DataEntryMode.
-	 * @param key - the name of the preference to retrieve. 
+	 * @param key The name of the preference to retrieve. 
 	 */
 	public DataEntryMode(String key) {
 		
@@ -70,18 +68,16 @@ public class DataEntryMode implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the Settings key string.
-	 * @return
+	 * @return The Settings key string.
 	 */
 	public String getKey() {
 		return this.key;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the current data entry mode value.
-	 * @return the int value.
+	 * @return The int value.
 	 * 
 	 * NOTE: The value is retrieved from shared preferences ONLY when 
 	 *       the instance is constructed.
@@ -91,43 +87,38 @@ public class DataEntryMode implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
-	 * Returns a summary String describing the current preference value. 
-	 * @return a summary String for the current preference value.
+	 * Returns a summary String describing the current preference value.
+	 * @return A summary String for the current preference value.
 	 */
 	public String getSummary() {
 		return this.summary;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns true if mode is CALCULATE_PRICE
-	 * @return boolean
+	 * @return true if mode is CALCULATE_PRICE
 	 */
 	public boolean isCalculatePrice() {
 		return (value == CALCULATE_PRICE);
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns true if mode is CALCULATE_COST
-	 * @return boolean
+	 * @return true if mode is CALCULATE_COST
 	 */
 	public boolean isCalculateCost() {
 		return (value == CALCULATE_COST);
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns true if mode is CALCULATE_GALLONS
-	 * @return boolean
+	 * @return true if mode is CALCULATE_GALLONS
 	 */
 	public boolean isCalculateGallons() {
 		return (value == CALCULATE_GALLONS);
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns a string representing the object.
 	 * @see java.lang.Object#toString()
 	 */

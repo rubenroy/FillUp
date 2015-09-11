@@ -31,7 +31,6 @@ import android.app.Activity;
 import android.content.Intent;
 
 /**
- * DESCRIPTION:
  * Implements an Android Activity class to display a date/time value and 
  * allow the user to modify it. The date/time value is passed in/out
  * of the Activity via the Android Intent mechanism.
@@ -54,7 +53,6 @@ public class DateTimeActivity extends Activity {
 	private long milliseconds;
 	
     /**
-     * DECRIPTION:
      * Called when the activity is starting.
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -76,7 +74,6 @@ public class DateTimeActivity extends Activity {
     }
 
     /**
-     * DESCRIPTION:
      * Initialize the Activity's standard options menu.
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
      */
@@ -87,7 +84,6 @@ public class DateTimeActivity extends Activity {
     }
     
     /**
-     * DESCRIPTION:
      * Set the widget values based on the initial data values 
      * obtained via Activity Intent.
      */
@@ -105,11 +101,10 @@ public class DateTimeActivity extends Activity {
      }
 
     /**
-     * DESCRIPTION:
      * Get the current data values from the widgets after user edit,
      * validate them, and return results.
      * 
-     * @return boolean - indicates if edited data is valid (valid=true)
+     * @return Indicates if edited data is valid (valid=true)
      */
     protected boolean getData() {
     	int month = datePicker.getMonth();
@@ -123,18 +118,16 @@ public class DateTimeActivity extends Activity {
     }
 
     /**
-     * DESCRIPTION:
      * Called when the CANCEL button has been clicked.
-     * @param view
+     * @param view View
      */
     public void clickedCancel(View view) {
     	returnResult(Activity.RESULT_CANCELED);
     }
     
     /**
-     * DESCRIPTION:
      * Called when the OK button has been clicked (user is done editing data).
-     * @param view
+     * @param view View
      */
     public void clickedOk(View view) {
     	
@@ -146,9 +139,8 @@ public class DateTimeActivity extends Activity {
     }
     
     /**
-     * DESCRIPTION:
      * Returns results the caller and closes this Activity.
-     * @param resultCode - the integer result code to return to caller.
+     * @param resultCode The integer result code to return to caller.
      */
     protected void returnResult(int resultCode) {
 

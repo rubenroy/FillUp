@@ -46,7 +46,6 @@ import com.androidplot.xy.XYSeries;
 import com.androidplot.xy.XYStepMode;
 
 /**
- * DESCRIPTION:
  * A plot of gas usage data.
  * 
  * NOTE: 
@@ -99,7 +98,6 @@ public class CostPlot implements OnSharedPreferenceChangeListener {
     private Format ylabels = CurrencyManager.getInstance().getSymbolicFormatter();  
     
     /**
-     * DESCRIPTION:
      * Creates the graph.
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -158,7 +156,6 @@ public class CostPlot implements OnSharedPreferenceChangeListener {
     }        
     
     /**
-     * DESCRIPTION:
      * Performs the steps required to display the data in the plot widget.
      */
     private void drawPlot() {
@@ -187,7 +184,6 @@ public class CostPlot implements OnSharedPreferenceChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Clears the plot widget, then plots the data again.
      */
     private void redrawPlot() {
@@ -197,7 +193,6 @@ public class CostPlot implements OnSharedPreferenceChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Adjust font sizes used for plot labels to reflect shared
      * preferences.
      */
@@ -227,7 +222,6 @@ public class CostPlot implements OnSharedPreferenceChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Sets the boundaries for the X and Y-axis based on the data values.
      */
     private void setPlotAxisBoundaries() {
@@ -269,10 +263,9 @@ public class CostPlot implements OnSharedPreferenceChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Obtains (x,y) values from the current data set for plotting. Also
      * calculates the range (min/max) of x-axis and y-axis values for the series.
-     * @return a SimpleXYSeries instance containing (x,y) values to plot.
+     * @return A SimpleXYSeries instance containing (x,y) values to plot.
      */
     private SimpleXYSeries getPlotSeries() {
     	
@@ -326,7 +319,6 @@ public class CostPlot implements OnSharedPreferenceChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Obtains (x,y) values for a line reflecting the average value
      * for the current data set.
      * @return a SimpleXYSeries instance containing (x,y) values to plot.
@@ -349,7 +341,6 @@ public class CostPlot implements OnSharedPreferenceChangeListener {
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Called when one or more plot preferences have changed.
 	 * @see android.content.SharedPreferences.OnSharedPreferenceChangeListener#onSharedPreferenceChanged(android.content.SharedPreferences, java.lang.String)
 	 */
@@ -369,9 +360,8 @@ public class CostPlot implements OnSharedPreferenceChangeListener {
 	}
 	
     /**
-     * DESCRIPTION:
      * Sets the height of the plot view.
-     * @param height - the height in pixels.
+     * @param height The height in pixels.
      */
     public void setHeight(int height) {
     	ViewGroup.LayoutParams params = plot.getLayoutParams();

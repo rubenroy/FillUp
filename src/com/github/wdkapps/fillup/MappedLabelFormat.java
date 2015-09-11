@@ -26,7 +26,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * DESCRIPTION:
  * Implements a formatter for plot axis labels by mapping label strings to 
  * specific plot data values.
  */
@@ -42,7 +41,6 @@ public class MappedLabelFormat extends Format {
 	private boolean abbreviate = false;
 	
 	/**
-	 * DESCRIPTION:
 	 * Removes all elements from this map, leaving it empty.
 	 */
 	public void clear() {
@@ -50,17 +48,15 @@ public class MappedLabelFormat extends Format {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Maps the specified value to the specified label.
-	 * @param value
-	 * @param label
+	 * @param value Value
+	 * @param label	Label
 	 */
 	public void put(Long value, String label) {
 		labels.put(value,label);
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Appends the mapped label to the buffer. If a mapping is not found, 
 	 * the buffer is left unchanged.<p> 
 	 * NOTE: Androidplot casts each axis value as a Double even though the
@@ -87,7 +83,6 @@ public class MappedLabelFormat extends Format {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Unsupported method - not needed.
 	 * @see java.text.Format#parseObject(java.lang.String, java.text.ParsePosition)
 	 */
@@ -97,10 +92,9 @@ public class MappedLabelFormat extends Format {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Specifies whether labels should be abbreviated to their first character
 	 * during format.
-	 * @param enabled - true = abbreviate the labels.
+	 * @param enabled True = abbreviate the labels.
 	 */
 	public void setAbbreviate(boolean enabled) {
 		this.abbreviate = enabled;

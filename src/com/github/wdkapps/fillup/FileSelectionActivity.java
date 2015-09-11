@@ -37,11 +37,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 /**
- * DESCRIPTION:
  * An Activity to allow selection of one existing file from a specified path.
- * @param ROOT - the root path as a String.
- * @param PATH - the path to display contents of as a String (at or below ROOT)
- * @param EXT - only display file names with this extension (null = display all files)
+ * @param ROOT The root path as a String.
+ * @param PATH The path to display contents of as a String (at or below ROOT)
+ * @param EXT Only display file names with this extension (null = display all files)
  */
 public class FileSelectionActivity extends Activity implements AdapterView.OnItemClickListener {
 	
@@ -72,7 +71,6 @@ public class FileSelectionActivity extends Activity implements AdapterView.OnIte
 	private String ext;
 
 	/**
-	 * DESCRIPTION
 	 * Called when the activity is starting. 
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -106,9 +104,8 @@ public class FileSelectionActivity extends Activity implements AdapterView.OnIte
 	}
 
 	/**
-	 * DESCRIPTION
 	 * Called the first time the options menu is displayed in order to initialize 
-	 * the contents of the Activity's standard options menu. 
+	 * the contents of the Activity's standard options menu.
 	 * @return true for the menu to be displayed; false it will not be shown.
 	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
 	 */
@@ -118,7 +115,6 @@ public class FileSelectionActivity extends Activity implements AdapterView.OnIte
 	}
 	
 	/**
-	 * DESCRIPTION
 	 * Called to retrieve per-instance state from an activity before being killed so that the 
 	 * state can be restored.
 	 * @see android.app.Activity#onSaveInstanceState(android.os.Bundle)
@@ -130,10 +126,9 @@ public class FileSelectionActivity extends Activity implements AdapterView.OnIte
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Selects a new path location and updates the displayed list of files
 	 * to reflect the content of that directory.
-	 * @param destination - the new path location.
+	 * @param destination The new path location.
 	 */
 	private void chooseDirectory(File destination) {
 
@@ -192,7 +187,6 @@ public class FileSelectionActivity extends Activity implements AdapterView.OnIte
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Callback invoked when an item in the ListView has been clicked.
 	 * @see android.widget.AdapterView.OnItemClickListener#onItemClick(android.widget.AdapterView, android.view.View, int, long)
 	 */
@@ -209,7 +203,6 @@ public class FileSelectionActivity extends Activity implements AdapterView.OnIte
 	}
 	
     /**
-     * DESCRIPTION
      * Finish this Activity with a result code and URI of the selected file.
      * @param file The file selected (null = canceled)
      */
@@ -225,7 +218,6 @@ public class FileSelectionActivity extends Activity implements AdapterView.OnIte
     }
     
     /**
-     * DESCRIPTION:
      * Comparator class to compare two Strings ignoring case.
      */
     private class ComparatorIgnoreCase implements Comparator<String> {

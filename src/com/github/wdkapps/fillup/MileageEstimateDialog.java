@@ -35,7 +35,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * DESCRIPTION:
  * A dialog box to calculate and display mileage estimates based
  * on gas gauge hand position.
  */
@@ -51,7 +50,6 @@ public class MileageEstimateDialog {
 	private static MileageCalculation calculation;
 	
 	/**
-	 * DESCRIPTION:
 	 * Determines if the dialog can be displayed for a specific set of data.<p>
 	 * Data requirements: 
 	 * <ul>
@@ -61,10 +59,10 @@ public class MileageEstimateDialog {
 	 * <li>a previous record with full tank.
 	 * </ol>
 	 * </ul>
-	 * @param _vehicle - the Vehicle to calculate estimates for.
-	 * @param _records - a List of gas records for the vehicle.
-	 * @param location - the index of the gas record in the list to estimate mileage for.
-	 * @return true if the dialog can be displayed, false otherwise. 
+	 * @param _vehicle The Vehicle to calculate estimates for.
+	 * @param _records A List of gas records for the vehicle.
+	 * @param location The index of the gas record in the list to estimate mileage for.
+	 * @return true if the dialog can be displayed, false otherwise.
 	 */
 	public static boolean isDisplayable(Vehicle _vehicle, List<GasRecord> _records, int location) {
 		
@@ -98,13 +96,11 @@ public class MileageEstimateDialog {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Initializes the data required to perform mileage estimate calculations. 
 	 * NOTE: Assumes that the dialog isDisplayable() for the specified data!
-	 * @param _vehicle - the Vehicle to perform calculations for.
-	 * @param _records - a List of gas records for the vehicle.
-	 * @param location - the index of the gas record in the list to estimate mileage for.
-	 * @return true if initialization was successful, false otherwise. 
+	 * @param _vehicle The Vehicle to perform calculations for.
+	 * @param _records A List of gas records for the vehicle.
+	 * @param location The index of the gas record in the list to estimate mileage for.
 	 */
 	public static void init(Vehicle _vehicle, List<GasRecord> _records, int location) {
 		
@@ -122,12 +118,11 @@ public class MileageEstimateDialog {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Creates an instance of the dialog. Uses the data previously specified
 	 * via the init() method.
-	 * @param activity - the activity creating the dialog.
-	 * @param id - an integer identifying the dialog (meaningful only to the owner).
-	 * @return - the Dialog instance.
+	 * @param activity The activity creating the dialog.
+	 * @param id An integer identifying the dialog (meaningful only to the owner).
+	 * @return The Dialog instance.
 	 */
 	public static Dialog create(final Activity activity, final int id) {
 		
@@ -213,10 +208,9 @@ public class MileageEstimateDialog {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Creates a message String describing a specific mileage calculation.
-	 * @param calc - the MileageCalculation. 
-	 * @return a String describing the calculation.
+	 * @param calc The MileageCalculation. 
+	 * @return A String describing the calculation.
 	 */
 	private static String getEstimateString(MileageCalculation calc) {
 		
@@ -243,10 +237,9 @@ public class MileageEstimateDialog {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Calculates estimated mileage based on a specified gas gauge hand position.
-	 * @param position - the gas gauge hand position (0.0 [empty] - 1.0 [full])
-	 * @return the estimated MileageCalculation (null = no calculation).
+	 * @param position The gas gauge hand position (0.0 [empty] 1.0 [full])
+	 * @return The estimated MileageCalculation (null = no calculation).
 	 */
 	private static MileageCalculation getEstimateCalculation(float position) {
 		

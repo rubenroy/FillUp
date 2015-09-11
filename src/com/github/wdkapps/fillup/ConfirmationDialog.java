@@ -26,35 +26,31 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 
 /**
- * DESCRIPTION:
  * A general purpose dialog to use for confirmation of program actions.
  */
 public class ConfirmationDialog {
 	
     /**
-     * DESCRIPTION:
 	 * The activity that creates an instance of this dialog must
      * implement this interface in order to receive event callbacks.
      */
     public interface Listener {
         /**
-         * DESCRIPTION:
          * Called when the dialog closes to report the response to the listener.
-		 * @param id - the id value specified when the dialog was created.
-         * @param confirmed - boolean indicating result (true = confirmed).
+	     * @param id The id value specified when the dialog was created.
+         * @param confirmed boolean indicating result (true = confirmed).
          */
         public void onConfirmationDialogResponse(int id, boolean confirmed);
     }
     
     /**
-     * DESCRIPTION:
      * Creates an instance of the dialog.
-     * @param context - the Context of the activity/application creating the dialog.
-     * @param listener - a Listener to notify of dialog events.
-     * @param id - an integer identifying the dialog (meaningful only to the owner).
-	 * @param title - the title String to display.
-	 * @param message - the message String to display.
-     * @return - the Dialog.
+     * @param context The Context of the activity/application creating the dialog.
+     * @param listener A Listener to notify of dialog events.
+     * @param id An integer identifying the dialog (meaningful only to the owner).
+	 * @param title The title String to display.
+	 * @param message The message String to display.
+     * @return The Dialog.
      */
     public static Dialog create(
     		Context context, 

@@ -27,7 +27,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 /**
- * DESCRIPTION:
  * An Android SQLiteOpenHelper for our gas log database.
  */
 class GasLogOpenHelper extends SQLiteOpenHelper {
@@ -36,16 +35,14 @@ class GasLogOpenHelper extends SQLiteOpenHelper {
 	private static final String TAG = GasLogOpenHelper.class.getName();
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of GasLogOpenHelper.
-	 * @param context - the application or activity Context that owns the database.
+	 * @param context The application or activity Context that owns the database.
 	 */
 	public GasLogOpenHelper(Context context) {
         super(context, GasLog.DATABASE_NAME, null, GasLog.DATABASE_VERSION);
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Creates the database.
 	 * @see android.database.sqlite.SQLiteOpenHelper#onCreate(android.database.sqlite.SQLiteDatabase)
 	 */
@@ -55,7 +52,6 @@ class GasLogOpenHelper extends SQLiteOpenHelper {
     }
 
 	/**
-	 * DESCRIPTION:
 	 * Upgrades the database to a new version.
 	 * @see android.database.sqlite.SQLiteOpenHelper#onUpgrade(android.database.sqlite.SQLiteDatabase, int, int)
 	 */
@@ -100,10 +96,9 @@ class GasLogOpenHelper extends SQLiteOpenHelper {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Convenience method to execute an array or SQL command Strings.
-	 * @param db - the database.
-	 * @param statements - array of SQL statement Strings to execute.
+	 * @param db The database.
+	 * @param statements Array of SQL statement Strings to execute.
 	 */
 	private void execSQL(SQLiteDatabase db, String [] statements) {
 		final String tag = TAG + ".execSQL()";

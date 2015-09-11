@@ -22,14 +22,12 @@ package com.github.wdkapps.fillup;
 import java.util.Comparator;
 
 /**
- * DESCRIPTION:
  * Used to compare two Vehicle instances to determine their ordering 
  * with respect to each other based on name value.
  */
 public class VehicleNameComparator implements Comparator<Vehicle> {
 
 	/**
-	 * DESCRIPTION:
 	 * Compare two Vehicle instances.
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */

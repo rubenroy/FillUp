@@ -30,7 +30,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 /**
- * DESCRIPTION:
  * An Android ArrayAdapter for the purpose of displaying gasoline records
  * in an Android ListView.
  */
@@ -51,11 +50,10 @@ public class GasLogListAdapter extends ArrayAdapter<GasRecord> {
 
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of GasLogListAdapter.
 	 *
-	 * @param activity - the Android Activity instance that owns the ListView.
-	 * @param records - the List of GasRecord instances for display in the ListView.
+	 * @param activity The Android Activity instance that owns the ListView.
+	 * @param records The List of GasRecord instances for display in the ListView.
 	 */
 	public GasLogListAdapter(Activity activity, List<GasRecord> records) {
 		super(activity,R.layout.row_gas_log_list,records);
@@ -65,7 +63,6 @@ public class GasLogListAdapter extends ArrayAdapter<GasRecord> {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Gets current configuration values from Settings. Better performance 
 	 * keeping a local copy of these values, but we need to update
 	 * when they change.
@@ -78,7 +75,6 @@ public class GasLogListAdapter extends ArrayAdapter<GasRecord> {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs and populates a View for display of the GasRecord date at the index
 	 * of the List specified by the position parameter.
 	 * @see android.widget.ArrayAdapter#getView(int, android.view.View, android.view.ViewGroup)
@@ -159,7 +155,6 @@ public class GasLogListAdapter extends ArrayAdapter<GasRecord> {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Called by parent when the underlying data set changes.
 	 * @see android.widget.ArrayAdapter#notifyDataSetChanged()
 	 */

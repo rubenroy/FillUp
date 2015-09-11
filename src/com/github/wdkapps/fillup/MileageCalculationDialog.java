@@ -30,7 +30,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * DESCRIPTION:
  * A dialog box to display mileage calculation information.
  */
 public class MileageCalculationDialog {
@@ -39,36 +38,32 @@ public class MileageCalculationDialog {
 	private static MileageCalculation calculation;
 
 	/**
-	 * DESCRIPTION:
 	 * Determines if the dialog can be displayed for a specific set of data.<p>
 	 * Data requirements: 
 	 * <ul>
 	 * <li>The record must have a MileageCalculation instance.
 	 * </ul>
-	 * @param record - the gas record to display mileage calculation for.
-	 * @return true if the dialog can be displayed, false otherwise. 
+	 * @param record The gas record to display mileage calculation for.
+	 * @return true if the dialog can be displayed, false otherwise.
 	 */
 	public static boolean isDisplayable(GasRecord record) {
 		return record.hasCalculation();
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Initializes the mileage calculation data to display. 
 	 * NOTE: Assumes that the dialog isDisplayable() for the specified data!
-	 * @param record - the gas record to display mileage calculation for.
-	 * @return true if initialization was successful, false otherwise. 
+	 * @param record The gas record to display mileage calculation for.
 	 */
 	public static void init(GasRecord record) {
 		calculation = record.getCalculation();
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Creates an instance of the dialog.
-	 * @param activity - the activity creating the dialog.
-	 * @param id - an integer identifying the dialog (meaningful only to the owner).
-	 * @return - the Dialog
+	 * @param activity The activity creating the dialog.
+	 * @param id An integer identifying the dialog (meaningful only to the owner).
+	 * @return The Dialog
 	 */
 	public static Dialog create(final Activity activity, final int id) {
 
@@ -128,10 +123,9 @@ public class MileageCalculationDialog {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Creates a message String describing a specific mileage calculation.
-	 * @param calc - the MileageCalculation. 
-	 * @return a String describing the calculation.
+	 * @param calc The MileageCalculation. 
+	 * @return A String describing the calculation.
 	 */
 	private static String getCalculationText(MileageCalculation calc) {
 		

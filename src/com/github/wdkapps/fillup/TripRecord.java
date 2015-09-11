@@ -24,7 +24,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * DESCRIPTION:
  * Represents data for a trip that spans start and end points defined
  * by two gas records.
  */
@@ -49,9 +48,8 @@ public class TripRecord {
     private Set<GasRecord> records = new HashSet<GasRecord>();
     
     /**
-     * DESCRIPTION:
      * Constructs an empty instance of TripRecord for a specified date
-     * @param date - the start/end date for the trip.
+     * @param date The start/end date for the trip.
      */
     public TripRecord(Date date) {
     	startDate = date;
@@ -62,11 +60,10 @@ public class TripRecord {
     }
 
     /**
-     * DESCRIPTION:
      * Constructs an instance of TripRecord reflecting a trip
      * between two gas stops.
-     * @param start - GasRecord marking the start of the trip.
-     * @param end - GasRecord marking the end of the trip.
+     * @param start GasRecord marking the start of the trip.
+     * @param end GasRecord marking the end of the trip.
      */
     public TripRecord(GasRecord start, GasRecord end) {
     	startDate = start.getDate();
@@ -79,10 +76,9 @@ public class TripRecord {
     }
     
     /**
-     * DESCRIPTION:
      * Append the data for another trip to this trip record, such
      * that this trip record now reflects the totals for both trips.
-     * @param that - the TripRecord to append.
+     * @param that The TripRecord to append.
      */
     public void append(TripRecord that) {
 
@@ -104,64 +100,57 @@ public class TripRecord {
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the start date attribute.
-	 * @return the Date that the trip started.
+	 * @return The Date that the trip started.
 	 */
 	public Date getStartDate() {
 		return startDate;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the end date attribute.
-	 * @return the Date that the trip ended.
+	 * @return The Date that the trip ended.
 	 */
 	public Date getEndDate() {
 		return endDate;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the distance attribute.
-	 * @return the distance driven during the trip.
+	 * @return The distance driven during the trip.
 	 */
 	public Integer getDistance() {
 		return distance;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the gallons attribute.
-	 * @return the amount of gas purchased during the trip.
+	 * @return The amount of gas purchased during the trip.
 	 */
 	public Float getGallons() {
 		return gallons;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the cost attribute.
-	 * @return the total cost of gas purchased during the trip.
+	 * @return The total cost of gas purchased during the trip.
 	 */
 	public Double getCost() {
 		return cost;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the gas record set attribute.
-	 * @return the set of gas records that the trip represents.
+	 * @return The set of gas records that the trip represents.
 	 */
 	public Set<GasRecord> getGasRecords() {
 		return records;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Getter method for average price per gallon paid for fuel
 	 * over the trip period.
-	 * @return the price of fuel per gallon.
+	 * @return The price of fuel per gallon.
 	 */
 	public Double getPrice() {
 		Double price = 0.0d;

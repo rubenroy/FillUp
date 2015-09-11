@@ -33,16 +33,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * DESCRIPTION:
  * A dialog box to inform the user that mileage calculations cannot be performed
  * until a full tank is logged.
  */
 public class TankNeverFilledDialog {
 	
 	/**
-	 * DESCRIPTION:
 	 * Determines if the dialog can be displayed for a specific set of data.
-	 * @param records - the gas records to evaluate.
+	 * @param records The gas records to evaluate.
 	 * @return true if the dialog can be displayed, false otherwise. 
 	 */
 	public static boolean isDisplayable(List<GasRecord> records) {
@@ -50,11 +48,10 @@ public class TankNeverFilledDialog {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Creates an instance of the dialog.
-	 * @param activity - the activity creating the dialog.
-	 * @param id - an integer identifying the dialog (meaningful only to the owner).
-	 * @return - the Dialog
+	 * @param activity The activity creating the dialog.
+	 * @param id An integer identifying the dialog (meaningful only to the owner).
+	 * @return The Dialog
 	 */
 	public static Dialog create(final Activity activity, final int id) {
 

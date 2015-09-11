@@ -22,7 +22,6 @@ package com.github.wdkapps.fillup;
 import java.io.Serializable;
 
 /**
- * DESCRIPTION:
  * Implements an object to calculate gas mileage for a set of 
  * gasoline records. It calculates total distance driven, total
  * gasoline used and overall fuel efficiency (mileage) in the specified
@@ -53,11 +52,10 @@ public class MileageCalculation implements Serializable {
 	protected Units units;
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of MileageCalculation.
 	 *
-	 * @param startRecord - GasRecord reflecting the previous full tank of gas.
-	 * @param units - the Units of measurement to use for calculations.
+	 * @param startRecord GasRecord reflecting the previous full tank of gas.
+	 * @param units The Units of measurement to use for calculations.
 	 */
 	public MileageCalculation(GasRecord startRecord, Units units) {
 		this.startOdometer = startRecord.getOdometer();
@@ -67,10 +65,9 @@ public class MileageCalculation implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Adds a gas record to the set of records used for calculation.
 	 * NOTE: Assumed records are added in odometer order (lowest odometer first).
-	 * @param record - the GasRecord to add to the calculation set.
+	 * @param record The GasRecord to add to the calculation set.
 	 */
 	public void add(GasRecord record) {
 		this.endOdometer = record.getOdometer();
@@ -78,27 +75,24 @@ public class MileageCalculation implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the distance driven.
-	 * @return integer - distance driven.
+	 * @return Distance driven.
 	 */
 	public int getDistanceDriven() {
 		return endOdometer - startOdometer;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns the amount of gasoline used.
-	 * @return float - gasoline used.
+	 * @return Gasoline used.
 	 */
 	public float getGasolineUsed() {
 		return gasolineUsed;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Calculates the quantity of gasoline consumed per distance driven.
-	 * @return float - calculated fuel efficiency (mileage) 
+	 * @return Calculated fuel efficiency (mileage) 
 	 */
 	public float getMileage() {
 		float mileage = 0;
@@ -140,34 +134,30 @@ public class MileageCalculation implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns quantity of gasoline used as a formatted String.
-	 * @return String - quantity of gas used.
+	 * @return Quantity of gas used.
 	 */
 	public String getGasolineUsedString() {
 		return String.format(App.getLocale(),"%.3f", getGasolineUsed());
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the calculated mileage as a formatted String.
-	 * @return String - calculated gas mileage
+	 * @return Calculated gas mileage
 	 */
 	public String getMileageString() {
 		return String.format(App.getLocale(),"%.2f", getMileage());
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the units of measurement used for calculations.
-	 * @return - the Units of measurement.
+	 * @return The Units of measurement.
 	 */
 	public Units getUnits() {
 		return units;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Displays object instance values for logging purposes.
 	 * @see java.lang.Object#toString()
 	 */

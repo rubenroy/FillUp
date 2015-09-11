@@ -29,7 +29,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 /**
- * DESCRIPTION:
  * An Activity that performs startup checks and initialization for
  * the application, then launches the main Activity.
  */
@@ -38,7 +37,6 @@ public class StartupActivity extends Activity implements UnitsDialog.Listener {
 	protected final static String TAG = StartupActivity.class.getSimpleName();
 	
     /**
-     * DESCRIPTION
      * Called when the activity is starting.
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -67,7 +65,6 @@ public class StartupActivity extends Activity implements UnitsDialog.Listener {
     }   
 	
 	/**
-	 * DESCRIPTION:
 	 * Starts the main Activity and exits this startup activity.
 	 */
 	protected void startMainActivity() {
@@ -77,7 +74,6 @@ public class StartupActivity extends Activity implements UnitsDialog.Listener {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Determines if this is the first time starting after a 
 	 * clean application install (no data exists yet).
 	 * @return true if this is first startup after a clean install.
@@ -87,7 +83,6 @@ public class StartupActivity extends Activity implements UnitsDialog.Listener {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Determines if this is the first time starting after an application
 	 * update.
 	 * @return true if first startup after an application update.
@@ -123,7 +118,6 @@ public class StartupActivity extends Activity implements UnitsDialog.Listener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Displays information to the user describing what has changed 
 	 * for the current software update, if the update.html exists.
 	 */
@@ -147,14 +141,12 @@ public class StartupActivity extends Activity implements UnitsDialog.Listener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Request code constants for onActivityResult()
 	 * @see #onActivityResult(int, int, Intent)
 	 */
 	protected static final int SHOW_UPDATE_INFO = 1;
 	
     /**
-     * DESCRIPTION:
      * Called when an activity launched by this activity exits, giving the 
      * requestCode it was started with, the resultCode it returned, and any 
      * additional data from it.
@@ -177,7 +169,6 @@ public class StartupActivity extends Activity implements UnitsDialog.Listener {
     }
 
 	/**
-	 * DESCRIPTION:
 	 * Exits this Activity with launching the main Activity.
 	 */
 	protected void exitApplication() {
@@ -185,14 +176,12 @@ public class StartupActivity extends Activity implements UnitsDialog.Listener {
 	}
 	
     /**
-     * DESCRIPTION:
      * Dialog box integer ID constants
      * @see #onCreateDialog(int)
      */
     protected static final int DIALOG_SELECT_UNITS_ID = 1;
 
     /**
-     * DESCRIPTION:
      * Called as needed by the framework to create dialog boxes used by the Activity.
      * Each dialog box is referenced by a locally defined id integer. 
      * @see android.app.Activity#onCreateDialog(int)
@@ -213,7 +202,6 @@ public class StartupActivity extends Activity implements UnitsDialog.Listener {
     }
     
 	/**
- 	 * DESCRIPTION:
 	 * Save current state data.
 	 * NOTE: This gets called when the screen is rotated. The
 	 * Activity is then destroyed, re-created, and state restored.
@@ -230,9 +218,8 @@ public class StartupActivity extends Activity implements UnitsDialog.Listener {
 	}
 
 	/**
-	 * DECSRIPTION:
 	 * Called when a user response has been obtained from the dialog.
-	 * @see com.github.wdkapps.fillup.UnitsDialog.Listener#onUnitsDialogResponse(int, String)
+	 * @see com.github.wdkapps.fillup.UnitsDialog.Listener#onUnitsDialogResponse(int, UnitsDialog.Result, String)
 	 */
 	@Override
 	public void onUnitsDialogResponse(int id, UnitsDialog.Result result, String value) {

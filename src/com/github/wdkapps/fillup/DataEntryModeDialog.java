@@ -26,7 +26,6 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 
 /**
- * DESCRIPTION:
  * A dialog allowing a user to select preferred data entry mode.
  */
 public class DataEntryModeDialog {
@@ -37,28 +36,25 @@ public class DataEntryModeDialog {
 	enum Result {RESULT_SELECTED, RESULT_CANCEL};
 	
     /**
-     * DESCRIPTION:
 	 * The activity that creates an instance of this dialog must
      * implement this interface in order to receive event callbacks.
      */
     public interface Listener {
         /**
-         * DESCRIPTION:
          * Called when the dialog closes to report the response to the listener.
-		 * @param id - the id value specified when the dialog was created.
-         * @param result - the result of the action
+		 * @param id The id value specified when the dialog was created.
+         * @param result The result of the action
          */
         public void onDataEntryModeDialogResponse(int id, Result result);
     }
     
     /**
-     * DESCRIPTION:
      * Creates an instance of the dialog.
-     * @param context - the Context of the activity/application creating the dialog.
-     * @param listener - a Listener to notify of dialog events.
-     * @param id - an integer identifying the dialog (meaningful only to the owner).
-     * @param mode - the current DataEntryMode
-     * @return - the Dialog.
+     * @param context The Context of the activity/application creating the dialog.
+     * @param listener A Listener to notify of dialog events.
+     * @param id An integer identifying the dialog (meaningful only to the owner).
+     * @param mode The current DataEntryMode
+     * @return The Dialog.
      */
     public static Dialog create(
     		Context context, 

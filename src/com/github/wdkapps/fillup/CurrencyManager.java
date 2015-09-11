@@ -32,7 +32,6 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 /**
- * DESCRIPTION:
  * Manages currency settings and the formatting of currency values for 
  * specific locales.
  */
@@ -70,7 +69,6 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	private CurrencyFormatter numericFractionalFormatter = null;
 	
 	/**
-	 * DESCRIPTION:
 	 * Obtains a singleton instance of the CurrencyManager
 	 * @return CurrencyManager instance.
 	 */
@@ -82,10 +80,9 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
-	 * Returns a key string for a specific currency/locale. 
-	 * @param locale
-	 * @param currency
+	 * Returns a key string for a specific currency/locale.
+     * @param locale Locale
+	 * @param currency Currency
 	 * @return String
 	 */
 	private static String getKey(Locale locale, Currency currency) {
@@ -95,7 +92,6 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Initializes the currency setting to a default value if no other
 	 * value has been selected yet. 
 	 */
@@ -106,7 +102,6 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Obtains a list of available currencies and generates a map
 	 * to define key/value pairs.
 	 */
@@ -137,7 +132,6 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of CurrencyManager.
 	 */
 	private CurrencyManager() {
@@ -151,7 +145,6 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Get locale for preferred currency.
 	 */
 	private void getCurrencyLocale() {
@@ -167,9 +160,8 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the symbol for the currently selected currency/locale.
-	 * @return currency symbol as a String
+	 * @return Currency symbol as a String
 	 */
 	public String getCurrencySymbol() {
 		String symbol = "?";
@@ -182,10 +174,9 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns a list of preference entry strings for selection as
 	 * a currency setting.
-	 * @return array of entry Strings
+	 * @return Array of entry Strings
 	 */
 	public String[] getPrefEntries() {
 		Set<String> keyset = localeMap.keySet();
@@ -195,26 +186,23 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns a list of preference entry value strings for selection as
 	 * a currency setting.
-	 * @return array of entry value Strings
+	 * @return Array of entry value Strings
 	 */
 	public String[] getPrefEntryValues() {
 		return getPrefEntries();
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns a summary string to describe the current currency setting.
-	 * @return summary String
+	 * @return Summary String
 	 */
 	public String getPrefSummary() {
 		return Settings.getString(Settings.KEY_CURRENCY, DEFAULT_CURRENCY);
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Obtains an instance of a currency formatter for display
 	 * of currency values with currency symbol.
 	 * @return CurrencyFormatter
@@ -230,7 +218,6 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Obtains an instance of a currency formatter for display
 	 * of currency values without currency symbol.
 	 * @return CurrencyFormatter
@@ -246,7 +233,6 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Obtains an instance of a currency formatter for display
 	 * of fractional currency values with currency symbol.
 	 * @return CurrencyFormatter
@@ -262,7 +248,6 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Obtains an instance of a currency formatter for display
 	 * of fractional currency values without currency symbol.
 	 * @return PriceFormatter
@@ -278,7 +263,6 @@ public class CurrencyManager implements OnSharedPreferenceChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Called when Settings have changed. Updates the formatters to utilize the 
 	 * selected currency/locale. 
 	 * @see android.content.SharedPreferences.OnSharedPreferenceChangeListener#onSharedPreferenceChanged(android.content.SharedPreferences, java.lang.String)

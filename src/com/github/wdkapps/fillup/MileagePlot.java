@@ -45,7 +45,6 @@ import android.util.Log;
 import android.view.ViewGroup;
 
 /**
- * DESCRIPTION:
  * A plot of gas mileage data.
  * <p>
  * NOTE: 
@@ -101,7 +100,6 @@ public class MileagePlot implements OnSharedPreferenceChangeListener {
 	private static final Format ylabels = new DecimalFormat("###0.0");
 
     /**
-     * DESCRIPTION:
      * Creates the graph.
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -172,7 +170,6 @@ public class MileagePlot implements OnSharedPreferenceChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Performs the steps required to display the data in the plot widget.
      */
     private void drawPlot() {
@@ -201,7 +198,6 @@ public class MileagePlot implements OnSharedPreferenceChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Clears the plot widget, then draws the data again.
      */
     private void redrawPlot() {
@@ -211,7 +207,6 @@ public class MileagePlot implements OnSharedPreferenceChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Adjust font sizes used for plot labels to reflect shared
      * preferences.
      */
@@ -241,7 +236,6 @@ public class MileagePlot implements OnSharedPreferenceChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Sets the boundaries for the X and Y-axis based on the data values.
      */
     private void setPlotAxisBoundaries() {
@@ -284,10 +278,9 @@ public class MileagePlot implements OnSharedPreferenceChangeListener {
     }
 
     /**
-     * DESCRIPTION:
      * Obtains (x,y) values from the current data set for plotting. Also
      * calculates the average y-value for the series.
-     * @return a SimpleXYSeries instance containing (x,y) values to plot.
+     * @return A SimpleXYSeries instance containing (x,y) values to plot.
      */
     private SimpleXYSeries getPlotSeries() {
     	
@@ -346,10 +339,9 @@ public class MileagePlot implements OnSharedPreferenceChangeListener {
     }
 
     /**
-     * DESCRIPTION:
      * Obtains (x,y) values for a line reflecting the average value
      * for the current data set.
-     * @return a SimpleXYSeries instance containing (x,y) values to plot.
+     * @return A SimpleXYSeries instance containing (x,y) values to plot.
      */
     private SimpleXYSeries getAverageSeries() {
     	
@@ -369,7 +361,6 @@ public class MileagePlot implements OnSharedPreferenceChangeListener {
     }
 
 	/**
-	 * DESCRIPTION:
 	 * Called when one or more plot preferences have changed.
 	 * @see android.content.SharedPreferences.OnSharedPreferenceChangeListener#onSharedPreferenceChanged(android.content.SharedPreferences, java.lang.String)
 	 */
@@ -401,9 +392,8 @@ public class MileagePlot implements OnSharedPreferenceChangeListener {
 	}
 	
     /**
-     * DESCRIPTION:
      * Sets the height of the plot view.
-     * @param height - the height in pixels.
+     * @param height The height in pixels.
      */
     public void setHeight(int height) {
     	ViewGroup.LayoutParams params = plot.getLayoutParams();

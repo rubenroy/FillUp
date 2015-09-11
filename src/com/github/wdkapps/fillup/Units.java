@@ -27,7 +27,6 @@ import android.content.res.Resources;
 import android.preference.PreferenceManager;
 
 /**
- * DESCRIPTION:
  * Represents a preference value that specifies the units of measurement to use 
  * for mileage calculation. Provides the ability to obtain the current preference 
  * value and obtain label strings that reflect the setting (ie. "mpg", "gallons", 
@@ -54,9 +53,8 @@ public class Units implements Serializable {
 	private final String summary;
 
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of PlotDateRange.
-	 * @param key - the name of the preference to retrieve. 
+	 * @param key The name of the preference to retrieve. 
 	 */
 	public Units(String key) {
 		
@@ -77,9 +75,8 @@ public class Units implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns the preference value as an integer.
-	 * @return the int value.
+	 * @return The int value.
 	 * 
 	 * NOTE: The value is retrieved from shared preferences ONLY when 
 	 *       the instance is constructed.
@@ -89,19 +86,17 @@ public class Units implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns a summary String describing the current preference value. 
-	 * @return a summary String for the current preference value.
+	 * @return A summary String for the current preference value.
 	 */
 	public String getSummary() {
 		return this.summary;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the liquid volume label appropriate for the currently
 	 * selected Units preference value. 
-	 * @return label String.
+	 * @return Label String.
 	 */
 	public String getLiquidVolumeLabel() {
 		int id = R.string.error_label;
@@ -117,20 +112,18 @@ public class Units implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns the liquid volume label appropriate for the currently
 	 * selected Units preference value in lower case. 
-	 * @return label String.
+	 * @return Label String.
 	 */
 	public String getLiquidVolumeLabelLowerCase() {
 		return getLiquidVolumeLabel().toLowerCase(App.getLocale());
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns the liquid volume ratio label appropriate for the currently
 	 * selected Units preference value (example: "per gallon"). 
-	 * @return label String.
+	 * @return Label String.
 	 */
 	public String getLiquidVolumeRatioLabel() {
 		int id = R.string.error_label;
@@ -146,10 +139,9 @@ public class Units implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the distance ratio label appropriate for the currently
 	 * selected Units preference value (example: "per mile"). 
-	 * @return label String.
+	 * @return Label String.
 	 */
 	public String getDistanceRatioLabel() {
 		int id = R.string.error_label;
@@ -165,10 +157,9 @@ public class Units implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the distance label appropriate for the currently
 	 * selected Units preference value. 
-	 * @return label String.
+	 * @return Label String.
 	 */
 	public String getDistanceLabel() {
 		int id = R.string.error_label;
@@ -184,20 +175,18 @@ public class Units implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns the distance label appropriate for the currently
 	 * selected Units preference value in lower case. 
-	 * @return label String.
+	 * @return Label String.
 	 */
 	public String getDistanceLabelLowerCase() {
 		return getDistanceLabel().toLowerCase(App.getLocale());
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the label appropriate for the currently selected 
 	 * Units preference value. 
-	 * @return label String.
+	 * @return Label String.
 	 */
 	public String getMileageLabel() {
 		int id = R.string.error_label;
@@ -213,10 +202,9 @@ public class Units implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the average size of vehicle fuel tank in the
 	 * currently selected units of measurement.
-	 * @return float tank size (gallons or liters)
+	 * @return Tank size (gallons or liters)
 	 */
 	public float getAverageTankSize() {
 		float tanksize = 0f;

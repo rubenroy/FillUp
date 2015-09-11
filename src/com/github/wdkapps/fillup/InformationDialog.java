@@ -26,20 +26,18 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 
 /**
- * DESCRIPTION:
  * A general purpose dialog to use for displaying an informative message.
  * The only operator response is "OK".
  */
 public class InformationDialog {
 	
 	/**
-	 * DESCRIPTION:
 	 * Creates an instance of the dialog.
-	 * @param activity - the activity creating the dialog.
-	 * @param id - an integer identifying the dialog (meaningful only to the owner).
-	 * @param title - the title String to display.
-	 * @param message - the message String to display.
-	 * @return - the Dialog instance.
+	 * @param activity The activity creating the dialog.
+	 * @param id An integer identifying the dialog (meaningful only to the owner).
+	 * @param title The title String to display.
+	 * @param message The message String to display.
+	 * @return The Dialog instance.
 	 */
 	public static Dialog create(
 			final Activity activity, 

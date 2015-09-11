@@ -29,7 +29,6 @@ import android.content.res.AssetManager;
 import android.util.Log;
 
 /**
- * DESCRIPTION:
  * A report for display of statistics derived from monthly trip data.
  */
 public class StatisticsReport implements HtmlData {
@@ -53,10 +52,9 @@ public class StatisticsReport implements HtmlData {
 	private List<HtmlData> tables;
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of StatisticsReport.
-	 * @param title - the report title
-	 * @param monthly - the monthly trip data used to generate the report.
+	 * @param title The report title
+	 * @param monthly The monthly trip data used to generate the report.
 	 */
 	public StatisticsReport (String title, MonthlyTrips monthly) {
 
@@ -71,7 +69,6 @@ public class StatisticsReport implements HtmlData {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns the report as an HTML String.
 	 * @see com.github.wdkapps.fillup.HtmlData#getHtml()
 	 */
@@ -81,7 +78,6 @@ public class StatisticsReport implements HtmlData {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Generates statistical tables for the report.
 	 */
 	private void createTables() {
@@ -107,7 +103,6 @@ public class StatisticsReport implements HtmlData {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Generates an HTML page for the report.
 	 */
 	private void createReport() {
@@ -141,10 +136,9 @@ public class StatisticsReport implements HtmlData {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Reads the content of a specified asset file as String data.
-	 * @param asset - the name of the asset file.
-	 * @return the content of the file as a String.
+	 * @param asset The name of the asset file.
+	 * @return The content of the file as a String.
 	 * @throws IOException if an error occurs reading the file.
 	 */
 	private String readAssetFile(String asset) throws IOException {

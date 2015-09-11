@@ -23,7 +23,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * DESCRIPTION:
  * Implements an object representing one month of a calendar year to be used as an index
  * when iterating over a range of dates.
  */
@@ -39,9 +38,8 @@ public class Month {
 	private final String labels[] = App.getContext().getResources().getStringArray(R.array.arrayPlotMonthLabels);
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of Month.
-	 * @param date - the Date to initialize from.
+	 * @param date The Date to initialize from.
 	 */
 	public Month(Date date) {
 		this.month = date.getMonth();
@@ -49,9 +47,8 @@ public class Month {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of Month as a copy of another Month instance.
-	 * @param that - the Month instance to copy.
+	 * @param that The Month instance to copy.
 	 */
 	public Month(Month that) {
 		this.month = that.month;
@@ -59,7 +56,6 @@ public class Month {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Increment by one calendar month.
 	 */
 	public void increment() {
@@ -72,7 +68,6 @@ public class Month {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Decrement by one calendar month.
 	 */
 	public void decrement() {
@@ -85,9 +80,8 @@ public class Month {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Checks if this Month is before another specified Month.
-	 * @param that - the other Month.
+	 * @param that The other Month.
 	 * @return true if this Month precedes the specified Month. 
 	 */
 	public boolean before(Month that) {
@@ -98,9 +92,8 @@ public class Month {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns a Date representation of the Month.
-	 * @return the Month as a Date.
+	 * @return The Month as a Date.
 	 */
 	public Date getDate() {
 		// year,month,day,hour,min.sec
@@ -108,10 +101,9 @@ public class Month {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Calculates an integer hash code for this Month. 
+	 * @return The integer hash code.
 	 * @see java.lang.Object#hashCode()
-	 * @return the integer hash code.
 	 */
 	@Override
 	public int hashCode() {
@@ -123,11 +115,10 @@ public class Month {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Compares this instance with the specified object and indicates 
 	 * if they are equal. 
+	 * @return true if the specified object is equal to this record; false otherwise.
 	 * @see java.lang.Object#equals(java.lang.Object)
-	 * @return if the specified object is equal to this record; false otherwise.
 	 */
 	@Override
 	public boolean equals(Object obj) {
@@ -146,18 +137,16 @@ public class Month {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns a label for a specified month as "MMM".
-	 * @return a label String.
+	 * @return A label String.
 	 */
 	public String getLabel() {
 		return labels[month];
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns a label for a specified month as "MMM YYYY".
-	 * @return a label String.
+	 * @return A label String.
 	 */
 	public String getLongLabel() {
 		String mmm = labels[month];
@@ -166,10 +155,9 @@ public class Month {
 	}
 
 	/**
-	 * DESCRIPTION
 	 * Returns a label for a specified month as "MMM".
+	 * @return A label String.
 	 * @see java.lang.Object#toString()
-	 * @return a label String.
 	 */
 	@Override
 	public String toString() {

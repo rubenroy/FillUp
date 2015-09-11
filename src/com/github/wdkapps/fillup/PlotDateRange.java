@@ -28,7 +28,6 @@ import android.content.res.Resources;
 import android.preference.PreferenceManager;
 
 /**
- * DESCRIPTION:
  * Represents a preference value that specifies a range of dates to plot.
  * Provides the ability to obtain the current preference value and test whether a 
  * specified Java Date instance falls within the range of dates.
@@ -54,10 +53,9 @@ public class PlotDateRange {
 
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of PlotDateRange.
-	 * @param context - the context of the preferences whose values are wanted.
-	 * @param key - the name of the preference to retrieve. 
+	 * @param context The context of the preferences whose values are wanted.
+	 * @param key The name of the preference to retrieve. 
 	 */
 	public PlotDateRange(Context context, String key) {
 		
@@ -114,9 +112,8 @@ public class PlotDateRange {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns the preference value as an integer.
-	 * @return the int value.
+	 * @return The int value.
 	 * 
 	 * NOTE: The value is retrieved from shared preferences ONLY when 
 	 *       the instance is constructed.
@@ -126,10 +123,9 @@ public class PlotDateRange {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns a summary String describing the current preference value. 
 	 * The strings are defined as resources.
-	 * @return a summary String for the current preference value.
+	 * @return A summary String for the current preference value.
 	 */
 	public String getSummary() {
 		Resources resources = context.getResources();
@@ -138,27 +134,24 @@ public class PlotDateRange {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for start of date range.
-	 * @return the starting Date for the current range.
+	 * @return The starting Date for the current range.
 	 */
 	public Date getStartDate() {
 		return new Date(this.startDate.getTime());
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Getter method for end of date range.
-	 * @return the ending Date for the current range.
+	 * @return The ending Date for the current range.
 	 */
 	public Date getEndDate() {
 		return new Date(this.endDate.getTime());
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Determines if a specified date falls within the current plot date range.
-	 * @param date - the Date to test.
+	 * @param date The Date to test.
 	 * @return true if specified date is within range, false otherwise. 
 	 */
 	public boolean contains(Date date) {

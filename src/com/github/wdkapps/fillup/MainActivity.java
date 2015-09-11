@@ -36,7 +36,6 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 
 /**
- * DESCRIPTION:
  * The main Activity for the application. Displays a drop down list of 
  * vehicles from the log and allows a user to add/edit/or delete vehicles, 
  * view vehicle logs, and add a gas record to the log for a selected a 
@@ -65,7 +64,6 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
 	private ArrayAdapter<Vehicle> adapter;
 	
     /**
-     * DESCRIPTION
      * Called when the activity is starting.
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -124,7 +122,6 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
     /**
-     * DESCRIPTION:
      * Enable/disable the "drop down list" of vehicles and all
      * vehicle related View instances depending on whether any vehicles
      * are currently defined. 
@@ -138,7 +135,6 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
 
     /**
-     * DESCRIPTION:
      * Initialize the contents of the Activity's standard options menu. 
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
      */
@@ -149,7 +145,6 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
     /**
-     * DESCRIPTION:
      * Called when an item in the options menu is selected.
      * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
      */
@@ -193,7 +188,6 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Called when a View (i.e Button) that this Activity is a registered 
 	 * listener for is clicked. 
 	 * @see android.view.View.OnClickListener#onClick(android.view.View)
@@ -242,9 +236,8 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
 	}
 
     /**
-     * DESCRIPTION:
      * Determines which vehicle is currently selected in the spinner.
-     * @return the selected Vehicle. Also sets the selectedVehicle class attribute.
+     * @return The selected Vehicle. Also sets the selectedVehicle class attribute.
      */
     protected Vehicle getSelectedVehicle() {
         selectedVehicle = (Vehicle)spinnerVehicles.getSelectedItem();
@@ -255,9 +248,8 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
     /**
-     * DESCRIPTION:
      * Selects a vehicle based on its position in the vehicles list.
-     * @param position - the list index of the vehicle to select
+     * @param position The list index of the vehicle to select
      */
     protected void setSelectedVehicle(int position) {
     	updateVehiclesSpinnerState();
@@ -267,10 +259,9 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
     /**
-     * DESCRIPTION:
      * Locates a specified vehicle in the spinner and selects it. If unable
      * to find vehicle, the first vehicle in spinner is selected. 
-     * @param name - the name of the vehicle to select.
+     * @param name The name of the vehicle to select.
      */
     protected void setSelectedVehicle(String name) {
     	
@@ -287,10 +278,9 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
     /**
-     * DESCRIPTION:
      * Starts an Activity to view the log records for the 
      * selected vehicle.
-     * @param view - currently unused - necessary only if called as click listener.
+     * @param view Currently unused necessary only if called as click listener.
      */
     public void viewLog(View view) {
 
@@ -304,10 +294,9 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
     /**
-     * DESCRIPTION:
      * Starts an Activity to get a new gasoline record to be added to 
      * the gas log for the selected vehicle.
-     * @param view - currently unused - necessary only if called as click listener.
+     * @param view Currently unused - necessary only if called as click listener.
      */
     public void getGas(View view) {
 
@@ -327,9 +316,8 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
     /**
-     * DESCRIPTION:
      * Starts an Activity to plot data for the selected vehicle.
-     * @param view - currently unused - necessary only if called as click listener.
+     * @param view Currently unused - necessary only if called as click listener.
      */
     public void plotData(View view) {
 
@@ -343,9 +331,8 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
 
     /**
-     * DESCRIPTION:
      * Starts an Activity to display statistical data for the selected vehicle.
-     * @param view - currently unused - necessary only if called as click listener.
+     * @param view Currently unused - necessary only if called as click listener.
      */
     public void viewStatistics(View view) {
 
@@ -359,10 +346,9 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
     /**
-     * DESCRIPTION:
      * Adds a new vehicle to the log.
-     * @param vehicle - the new Vehicle.
-     * @return boolean - true if successful.
+     * @param vehicle The new Vehicle.
+     * @return true if successful.
      */
     protected boolean addVehicle(Vehicle vehicle) {
 
@@ -385,11 +371,10 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
     /**
-     * DESCRIPTION:
      * Updates data for a specified vehicle in the log.
      *
-     * @param vehicle - the edited vehicle.
-     * @return boolean - true if successful.
+     * @param vehicle The edited vehicle.
+     * @return true if successful.
      */
     protected boolean editVehicle(Vehicle vehicle) {
     	
@@ -412,10 +397,9 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
     /**
-     * DESCRIPTION:
      * Removes the selected vehicle and all its gas records from
      * the log.
-     * @return boolean - true if successful.
+     * @return true if successful.
      */
     protected boolean deleteVehicle() {
 
@@ -438,7 +422,6 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
     /**
-     * DESCRIPTION:
      * Dialog box integer ID constants
      * @see #onCreateDialog(int)
      */
@@ -450,7 +433,6 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     protected static final int DIALOG_TANK_NEVER_FILLED_ID = 6;
 
     /**
-     * DESCRIPTION:
      * Called as needed by the framework to create dialog boxes used by the Activity.
      * Each dialog box is referenced by a locally defined id integer. 
      * @see android.app.Activity#onCreateDialog(int)
@@ -496,7 +478,6 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Called when the user is done entering/editing vehicle data.
 	 * @see com.github.wdkapps.fillup.VehicleDialog.Listener#onVehicleDialogClosure(int, com.github.wdkapps.fillup.Vehicle)
 	 */
@@ -526,7 +507,6 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
 	}
 	
 	/**
-	 * DECSRIPTION:
 	 * Called when a user response has been obtained from the dialog.
 	 * @see com.github.wdkapps.fillup.ConfirmationDialog.Listener#onConfirmationDialogResponse(int, boolean)
 	 */
@@ -549,9 +529,8 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
 	}
 
     /**
-     * DESCRIPTION:
      * Adds a gas record to the log for the selected vehicle.
-     * @param record - the GasRecord data entered by the user.
+     * @param record The GasRecord data entered by the user.
      */
     protected void addGasRecord(GasRecord record) {
 
@@ -598,14 +577,12 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Request code constants for onActivityResult()
 	 * @see #onActivityResult(int, int, Intent)
 	 */
 	private static final int GET_GAS_REQUEST = 1;
     
     /**
-     * DESCRIPTION:
      * Called when an activity launched by this activity exits, giving the 
      * requestCode it was started with, the resultCode it returned, and any 
      * additional data from it.
@@ -632,7 +609,6 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Save current state data.
 	 * NOTE: This gets called when the screen is rotated. The
 	 * Activity is then destroyed, re-created, and state restored.
@@ -645,7 +621,6 @@ implements VehicleDialog.Listener, ConfirmationDialog.Listener, View.OnClickList
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Restore previously saved state data.
 	 * @see android.app.Activity#onRestoreInstanceState(android.os.Bundle)
 	 */

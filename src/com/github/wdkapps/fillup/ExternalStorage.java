@@ -25,16 +25,14 @@ import android.content.Context;
 import android.os.Environment;
 
 /**
- * DESCRIPTION:
  * Represents Android device external storage (sdcard).
  */
 public class ExternalStorage {
 
 	/**
-     * DESCRIPTION:
      * Determine whether external storage (sdcard) is in a 
      * readable state.
-     * @return boolean - true = readable
+     * @return true = readable
      */
     public static boolean isReadable() {
     	String state = Environment.getExternalStorageState();
@@ -43,10 +41,9 @@ public class ExternalStorage {
     }
 
     /**
-     * DESCRIPTION:
      * Determine whether external storage (sdcard) is in a 
      * writable state.
-     * @return boolean - true = writable
+     * @return true = writable
      */
     public static boolean isWritable() {
     	String state = Environment.getExternalStorageState();
@@ -54,9 +51,8 @@ public class ExternalStorage {
     }
     
     /**
-     * DESCRIPTION:
      * Returns path to the DOWNLOAD_SERVICE directory.
-     * @return the path as a Java File instance.
+     * @return The path as a Java File instance.
      */
     public static File getPublicDownloadDirectory() {
     	

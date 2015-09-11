@@ -22,7 +22,6 @@ package com.github.wdkapps.fillup;
 import java.io.Serializable;
 
 /**
- * DESCRIPTION:
  * A class to represent a specific vehicle in the gasoline log.
  * Each gasoline record refers to a specific vehicle in the log.
  * Needs to be Serializable in order to pass between Activity instances via 
@@ -47,7 +46,6 @@ public class Vehicle implements Serializable {
 	private Float tanksize;
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs a blank instance of Vehicle.
 	 */
 	public Vehicle() {
@@ -58,9 +56,8 @@ public class Vehicle implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs a copy of an existing Vehicle.
-	 * @param that - the existing Vehicle instance to copy.
+	 * @param that The existing Vehicle instance to copy.
 	 */
 	public Vehicle(Vehicle that) {
 		this.id = Integer.valueOf(that.id);
@@ -69,36 +66,32 @@ public class Vehicle implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the vehicle id attribute.
-	 * @return the Integer vehicle id value.
+	 * @return The Integer vehicle id value.
 	 */
 	public Integer getID() {
 		return this.id;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the vehicle id attribute.
-	 * @param id - the Integer vehicle id value. 
+	 * @param id The Integer vehicle id value. 
 	 */
 	public void setID(Integer id) {
 		this.id = id;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the vehicle name attribute.
-	 * @return the vehicle name String value.
+	 * @return The vehicle name String value.
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the vehicle name attribute.
-	 * @param name - the vehicle name String value.
+	 * @param name The vehicle name String value.
 	 * @throws IllegalArgumentException if the string is not a valid vehicle name.
 	 */
 	public void setName(String name) {
@@ -121,36 +114,32 @@ public class Vehicle implements Serializable {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the vehicle tank size attribute. 
-	 * @return the vehicle tank size float value.
+	 * @return The vehicle tank size float value.
 	 */
 	public Float getTankSize() {
 		return tanksize;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the vehicle tank size attribute.
-	 * @param tankSize - the Float vehicle tank size value.
+	 * @param tankSize The Float vehicle tank size value.
 	 */
 	public void setTankSize(Float tankSize) {
 		this.tanksize = tankSize;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Getter method for the vehicle tank size attribute.
-	 * @return the vehicle tank size attribute value as a String.
+	 * @return The vehicle tank size attribute value as a String.
 	 */
 	public String getTankSizeString() {
 		return String.format(App.getLocale(),"%.1f",tanksize);
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Setter method for the vehicle tank size attribute.
-	 * @param tankSize - the vehicle tank size value as a String.
+	 * @param tankSize The vehicle tank size value as a String.
 	 * @throws NumberFormatException if String parse fails.
 	 */
 	public void setTankSize(String tankSize) {
@@ -167,7 +156,6 @@ public class Vehicle implements Serializable {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns a string representation of the vehicle for display purposes.
 	 * @see java.lang.Object#toString()
 	 */

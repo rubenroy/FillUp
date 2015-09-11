@@ -20,15 +20,13 @@
 package com.github.wdkapps.fillup;
 
 /**
- * DESCRIPTION:
  * An interface for a class that can be represented as or contains HTML data. 
  */
 public interface HtmlData {
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns HTML data as a String.
-	 * @return the HTML data String.
+	 * @return The HTML data String.
 	 */
 	public String getHtml();
 

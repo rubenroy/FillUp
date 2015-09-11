@@ -29,35 +29,31 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 /**
- * DESCRIPTION:
  * A dialog box for entering/editing Vehicle data.
  */
 public class VehicleDialog {
 
 	/**
-	 * DESCRIPTION:
 	 * The activity that creates an instance of this dialog must
 	 * implement this interface in order to receive event callbacks.
 	 */
 	public interface Listener {
 		
 		/**
-		 * DESCRIPTION:
 		 * Called when the dialog closes to report the response to the listener.
-		 * @param id - the id value specified when the dialog was created.
-		 * @param vehicle - the edited vehicle (null = action was canceled).
+		 * @param id The id value specified when the dialog was created.
+		 * @param vehicle The edited vehicle (null = action was canceled).
 		 */
 		public void onVehicleDialogClosure(int id, Vehicle vehicle);
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Creates an instance of the dialog.
-	 * @param context - the Context of the activity/application creating the dialog.
-	 * @param listener - a Listener to notify of dialog events.
-	 * @param id - an integer identifying the dialog (meaningful only to the owner)
-	 * @param vehicle - the Vehicle to edit.
-	 * @return the Dialog.
+	 * @param context The Context of the activity/application creating the dialog.
+	 * @param listener A Listener to notify of dialog events.
+	 * @param id An integer identifying the dialog (meaningful only to the owner)
+	 * @param vehicle The Vehicle to edit.
+	 * @return The Dialog.
 	 */
 	public static Dialog create(
 			final Context context, 
@@ -136,10 +132,9 @@ public class VehicleDialog {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Validates the vehicle name string.
-	 * @param name - the vehicle name String to validate.
-	 * @return boolean - true = valid.
+	 * @param name The vehicle name String to validate.
+	 * @return true = valid.
 	 */
 	private static boolean isValidName(String name) {
 
@@ -154,10 +149,9 @@ public class VehicleDialog {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Validates the vehicle tank size string.
-	 * @param tanksize - the vehicle tank size String to validate.
-	 * @return boolean - true = valid.
+	 * @param tanksize The vehicle tank size String to validate.
+	 * @return true = valid.
 	 */
 	private static boolean isValidTankSize(String tanksize) {
 

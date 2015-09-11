@@ -38,7 +38,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 /**
- * DESCRIPTION:
  * Implements a group of tabs containing plots for economy, 
  * gasoline purchased, and distance driven statistics.
  */
@@ -75,7 +74,6 @@ public class PlotActivity extends Activity implements OnSharedPreferenceChangeLi
 	private ScrollView scrollview;
 
     /**
-     * DESCRIPTION:
      * Called when the Activity is created.
      * @see android.app.ActivityGroup#onCreate(android.os.Bundle)
      */
@@ -139,7 +137,6 @@ public class PlotActivity extends Activity implements OnSharedPreferenceChangeLi
     }
 
 	/**
-     * DESCRIPTION:
      * Initialize the contents of the Activity's standard options menu. 
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
      */
@@ -150,7 +147,6 @@ public class PlotActivity extends Activity implements OnSharedPreferenceChangeLi
     }
     
     /**
-     * DESCRIPTION:
      * Called when an item in the options menu is selected.
      * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
      */
@@ -171,7 +167,6 @@ public class PlotActivity extends Activity implements OnSharedPreferenceChangeLi
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Called when one or more shared preferences have changed.
 	 * @see android.content.SharedPreferences.OnSharedPreferenceChangeListener#onSharedPreferenceChanged(android.content.SharedPreferences, java.lang.String)
 	 */
@@ -199,7 +194,6 @@ public class PlotActivity extends Activity implements OnSharedPreferenceChangeLi
 	}
 	
     /**
-     * DESCRIPTION:
      * Adjust font size used for plot title labels to reflect shared
      * preferences.
      */

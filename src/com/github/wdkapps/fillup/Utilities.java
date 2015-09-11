@@ -24,16 +24,14 @@ import android.util.DisplayMetrics;
 import android.widget.Toast;
 
 /**
- * DESCRIPTION:
  * Implements various methods for general purpose use.
  */
 public class Utilities {
 	
 	/**
-     * DESCRIPTION:
      * Display an Android "toast" dialog box.
-     * @param context - the context to use. Usually an Application or Activity object.
-     * @param text - the text to display in the toast.
+     * @param context The context to use. Usually an Application or Activity object.
+     * @param text The text to display in the toast.
      */
     public static void toast(Context context, String text)
     {
@@ -42,10 +40,9 @@ public class Utilities {
     }
     
     /**
-     * DESCRIPTION:
      * Convert pixels to device independent pixels.
-     * @param px - pixels
-     * @return device independent pixels.
+     * @param px Pixels
+     * @return Device independent pixels.
      */
     public static float convertPixelsToDp(int px){
         DisplayMetrics metrics = App.getContext().getResources().getDisplayMetrics();
@@ -54,10 +51,8 @@ public class Utilities {
     }
     
     /**
-     * DESCRIPTION:
      * Convert device independent pixels to pixels. 
-     * @param dp - device independent pixels.
-     * @return pixels.
+     * @param dp Device independent pixels.
      */
     public static int convertDpToPixel(float dp){
         DisplayMetrics metrics = App.getContext().getResources().getDisplayMetrics();

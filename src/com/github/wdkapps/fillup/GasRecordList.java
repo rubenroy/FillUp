@@ -27,7 +27,6 @@ import java.util.List;
 import android.util.Log;
 
 /**
- * DESCRIPTION:
  * A collection of static methods that perform commonly used tasks on
  * a java list of gas records (List<GasRecord>).
  * 
@@ -39,10 +38,9 @@ public class GasRecordList {
 	protected final static String TAG = GasRecordList.class.getName();
 	
     /**
-     * DESCRIPTION:
      * Calculates gas mileage for a List of GasRecords.
      * NOTE: The resulting list is sorted by odometer value.
-     * @param list - the GasRecord List.
+     * @param list The GasRecord List.
      */
     public static void calculateMileage(List<GasRecord> list) {
     	
@@ -85,21 +83,19 @@ public class GasRecordList {
     }
 	
     /**
-     * DESCRIPTION:
      * Locates a record in the list. 
      * NOTE: Odometer value is used for comparison.
-	 * @param list - the list of gas records.
-     * @param record - the record to search for.
-     * @return the index of the record in the list (negative if not found).
+	 * @param list The list of gas records.
+     * @param record The record to search for.
+     * @return The index of the record in the list (negative if not found).
      */
     public static int find(List<GasRecord> list, GasRecord record) {
     	return Collections.binarySearch(list,record, new OdometerComparator());
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Searches a list to determine if it contains a record with a full tank.
-	 * @param list - the list of gas records.
+	 * @param list The list of gas records.
 	 * @return true if list contains a record with full tank.
 	 */
     public static boolean hasFullTank(List<GasRecord> list) {
@@ -111,11 +107,10 @@ public class GasRecordList {
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Searches for a previous record in the list with a full tank.
-	 * @param list - the list of gas records.
-	 * @param location - the location in the list to start searching.
-	 * @return the index of the previous full tank in the list (negative if not found)/
+	 * @param list The list of gas records.
+	 * @param location The location in the list to start searching.
+	 * @return The index of the previous full tank in the list (negative if not found)/
 	 */
     public static int findPreviousFullTank(List<GasRecord> list, int location) {
     	int previous = location;
@@ -133,13 +128,12 @@ public class GasRecordList {
     }
     
     /**
-     * DESCRIPTION:
      * Creates a new list containing a copy of the records at locations
      * [start] through [end-1]. 
-     * @param list - the list containing records to copy.
-     * @param start - the index at which to start the sublist.
-     * @param end - the index one past the end of the sublist.
-     * @return
+     * @param list The list containing records to copy.
+     * @param start The index at which to start the sublist.
+     * @param end The index one past the end of the sublist.
+     * @return The new list
      */
     public static List<GasRecord> subList(List<GasRecord> list, int start, int  end) {
     	List<GasRecord> sublist = new ArrayList<GasRecord>(end - start);

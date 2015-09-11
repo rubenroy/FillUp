@@ -22,14 +22,12 @@ package com.github.wdkapps.fillup;
 import java.util.Comparator;
 
 /**
- * DESCRIPTION:
  * Used to compare two GasRecord instances to determine their ordering 
  * with respect to each other based on date value.
  */
 public class DateComparator implements Comparator<GasRecord>{
 
 	/**
-	 * DESCRIPTION:
 	 * Compare two GasRecord instances.
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */

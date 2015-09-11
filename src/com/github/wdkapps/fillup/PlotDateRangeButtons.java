@@ -29,7 +29,6 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ToggleButton;
 
 /**
- * DESCRIPTION:
  * Implements an object to manage a set of compound buttons and select a 
  * date range for plots and statistics based on which button is clicked.
  * The buttons are defined in range_button_bar.xml layout. Plot date range 
@@ -55,10 +54,9 @@ public class PlotDateRangeButtons implements OnCheckedChangeListener {
 	private ToggleButton buttonAll;
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of PlotDateRangeButtons.
-	 * @param activity - the Activity that owns the buttons
-	 * @param key - the Settings key for the PlotDateRange shared preference to manage 
+	 * @param activity The Activity that owns the buttons
+	 * @param key The Settings key for the PlotDateRange shared preference to manage 
 	 */
 	public PlotDateRangeButtons(Activity activity, String key) {
 		this.activity = activity;
@@ -85,10 +83,9 @@ public class PlotDateRangeButtons implements OnCheckedChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Update the state of the buttons to reflect a specified 
 	 * PlotDateRange value.
-	 * @param range - the PlotDateRange value.
+	 * @param range The PlotDateRange value.
 	 */
 	private void setChecked(PlotDateRange range) {
 		int value = range.getValue();
@@ -100,9 +97,8 @@ public class PlotDateRangeButtons implements OnCheckedChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the button that is currently checked (should only be one).
-	 * @return the ToggleButton that is currently checked
+	 * @return The ToggleButton that is currently checked
 	 */
 	private CompoundButton getChecked() {
 		if (button1.isChecked()) return button1;
@@ -114,9 +110,8 @@ public class PlotDateRangeButtons implements OnCheckedChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Removes check for all buttons except the specified button.
-	 * @param button - the currently selected button.
+	 * @param button The currently selected button.
 	 */
 	private void uncheckOtherButtons(CompoundButton button) {
 		int id = button.getId();
@@ -128,9 +123,8 @@ public class PlotDateRangeButtons implements OnCheckedChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the PlotDateRange integer value for a specified button
-	 * @param button - the button
+	 * @param button The button
 	 * @return PlotDateRange integer value.
 	 */
 	private Integer getRangeValueForButton(CompoundButton button) {
@@ -145,7 +139,6 @@ public class PlotDateRangeButtons implements OnCheckedChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Called when the checked state of one of the buttons has changed.
 	 * @see android.widget.CompoundButton.OnCheckedChangeListener#onCheckedChanged(android.widget.CompoundButton, boolean)
 	 */
@@ -176,9 +169,8 @@ public class PlotDateRangeButtons implements OnCheckedChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Convenience method to get current plot date range.
-	 * @return the current PlotDateRange.
+	 * @return The current PlotDateRange.
 	 */
 	public PlotDateRange getPlotDateRange() {
 		return new PlotDateRange(activity,key);

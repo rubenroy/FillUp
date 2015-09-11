@@ -26,7 +26,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * DESCRIPTION:
  * A container for calculated trip data derived from a list of gas records. 
  * Provides a monthly summation of trip attributes (distance, gallons of
  * gas purchased, etc) for plotting purposes.
@@ -40,9 +39,8 @@ public class MonthlyTrips implements Iterable<Month>{
 	Date earliest = new Date();
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of MonthlyAggregate.
-	 * @param data - a list of gas records for trip calculations.
+	 * @param data A list of gas records for trip calculations.
 	 */
 	public MonthlyTrips(List<GasRecord> data) {
 		
@@ -62,9 +60,8 @@ public class MonthlyTrips implements Iterable<Month>{
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Adds a trip record to the map.
-	 * @param trip - the trip record to add.
+	 * @param trip The trip record to add.
 	 */
 	private void add(TripRecord trip) {
 		
@@ -88,10 +85,9 @@ public class MonthlyTrips implements Iterable<Month>{
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the trip data for a specified month.
-	 * @param month - the data index.
-	 * @return a TripRecord reflecting trip totals for the specified month.
+	 * @param month The data index.
+	 * @return A TripRecord reflecting trip totals for the specified month.
 	 */
 	public TripRecord getTrips(Month month) {
 		TripRecord trips = map.get(month);
@@ -100,7 +96,6 @@ public class MonthlyTrips implements Iterable<Month>{
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns a MonthIterator spanning the data contained in the map
 	 * within the currently configured plot date range.
 	 * @see java.lang.Iterable#iterator()

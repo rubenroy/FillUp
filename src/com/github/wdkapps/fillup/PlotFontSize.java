@@ -25,7 +25,6 @@ import android.content.res.Resources;
 import android.preference.PreferenceManager;
 
 /**
- * DESCRIPTION:
  * Represents a preference value that specifies the size of font to use for 
  * for plotting. 
  */
@@ -57,9 +56,8 @@ public class PlotFontSize {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the preference value as an integer.
-	 * @return the int value.
+	 * @return The int value.
 	 * 
 	 * NOTE: The value is retrieved from shared preferences ONLY when 
 	 *       the instance is constructed.
@@ -69,10 +67,9 @@ public class PlotFontSize {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the font size in dp corresponding to the current
 	 * font size "enumeration" value.
-	 * @return flat - the font size in dp.
+	 * @return flat The font size in dp.
 	 */
 	public float getSizeDp() {
 		float size = 0;
@@ -88,10 +85,9 @@ public class PlotFontSize {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns a summary String describing the current preference value. 
 	 * The strings are defined as resources.
-	 * @return a summary String for the current preference value.
+	 * @return A summary String for the current preference value.
 	 */
 	public String getSummary() {
 		Resources resources = context.getResources();

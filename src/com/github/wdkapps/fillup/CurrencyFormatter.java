@@ -30,7 +30,6 @@ import java.util.Locale;
 import android.util.Log;
 
 /**
- * DESCRIPTION:
  * A formatter for currency values as text Strings for a specified currency/locale.
  */
 public class CurrencyFormatter extends Format {
@@ -50,37 +49,32 @@ public class CurrencyFormatter extends Format {
 	protected NumberFormat nf; 
 
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of CurrencyFormatter.
-	 * @param numeric - true = numeric formatter, false = symbolic formatter
+	 * @param numeric true = numeric formatter, false = symbolic formatter
 	 */
 	public CurrencyFormatter(boolean numeric) {
 		this.numeric = numeric;
 	}
 	
 	/**
-	 * DESCRIPTION:
-	 * Returns a boolean indicating whether the formatter is
-	 * numeric
-	 * @return boolean - true = numeric formatter, false = symbolic formatter
+	 * Returns a boolean indicating whether the formatter is numeric.
+	 * @return true = numeric formatter, false = symbolic formatter
 	 */
 	public boolean isNumeric() {
 		return this.numeric;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the currently selected currency/locale
-	 * @return
+	 * @return The currently selected currency/locale
 	 */
 	public Locale getLocale() {
 		return locale;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Specifes a currency/locale to be utilized for formatting.
-	 * @param locale
+	 * @param locale The currency/locale to be utilized for formatting.
 	 */
 	public void setLocale(Locale locale) {
 		
@@ -102,10 +96,9 @@ public class CurrencyFormatter extends Format {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Formats a double value as a currency String.
-	 * @param value
-	 * @return String
+	 * @param value The double value
+	 * @return String The formatted currency String
 	 */
 	public String format(double value) {
 		return nf.format(value);
@@ -128,9 +121,8 @@ public class CurrencyFormatter extends Format {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Determine the default number of fraction digits to display for locale.
-	 * @return number of digits
+	 * @return Number of digits
 	 */
 	protected int getDefaultFractionDigits() {
 		
@@ -152,18 +144,16 @@ public class CurrencyFormatter extends Format {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Determine the minimum number of fraction digits to display for locale.
-	 * @return number of digits
+	 * @return Number of digits
 	 */
 	protected int getMinimumFractionDigits() {
     	return getDefaultFractionDigits();
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Determine the maximum number of fraction digits to display for locale.
-	 * @return number of digits
+	 * @return Number of digits
 	 */
 	protected int getMaximumFractionDigits() {
     	return getDefaultFractionDigits();

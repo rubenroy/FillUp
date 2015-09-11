@@ -38,7 +38,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 /**
- * DESCRIPTION:
  * Implements an Android Activity class to display one GasRecord and 
  * allow the user to enter/edit values. The record is passed in/out
  * of the Activity via the Android Intent mechanism.
@@ -83,7 +82,6 @@ View.OnFocusChangeListener {
 	private DataEntryMode mode;
 	
     /**
-     * DECRIPTION:
      * Called when the activity is starting.
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -112,7 +110,6 @@ View.OnFocusChangeListener {
     }
 
     /**
-     * DESCRIPTION:
      * Loads and initializes a UI form (layout) based on the current data entry mode.
      */
     private void loadForm() {
@@ -188,7 +185,6 @@ View.OnFocusChangeListener {
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Saves the activity state before before screen rotation, etc.
 	 * @see android.app.Activity#onSaveInstanceState(android.os.Bundle)
 	 */
@@ -201,7 +197,6 @@ View.OnFocusChangeListener {
 	}
 
     /**
-     * DESCRIPTION:
      * Initialize the Activity's standard options menu.
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
      */
@@ -213,7 +208,6 @@ View.OnFocusChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Sets the text displayed in the odometer EditText to 
      * reflect the gas record value.
      */
@@ -228,7 +222,6 @@ View.OnFocusChangeListener {
     }
 
     /**
-     * DESCRIPTION:
      * Sets the text displayed in the price EditText to 
      * reflect the gas record value.
      */
@@ -244,7 +237,6 @@ View.OnFocusChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Sets the text displayed in the cost EditText to 
      * reflect the gas record value.
      */
@@ -259,7 +251,6 @@ View.OnFocusChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Sets the text displayed in the gallons EditText to 
      * reflect the gas record value.
      */
@@ -274,7 +265,6 @@ View.OnFocusChangeListener {
     }
 
     /**
-     * DESCRIPTION:
      * Sets the text displayed in the appropriate EditText to 
      * reflect the calculated value.
      */
@@ -294,7 +284,6 @@ View.OnFocusChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Retrieves the text displayed in the odometer EditText and 
      * stores the value in the gas record.
      */
@@ -310,7 +299,6 @@ View.OnFocusChangeListener {
     }
         
     /**
-     * DESCRIPTION:
      * Retrieves the text displayed in the cost EditText and 
      * stores the value in the gas record.
      */
@@ -331,7 +319,6 @@ View.OnFocusChangeListener {
     }
 
     /**
-     * DESCRIPTION:
      * Retrieves the text displayed in the price EditText and 
      * stores the value in the gas record.
      */
@@ -347,7 +334,6 @@ View.OnFocusChangeListener {
     }
 
     /**
-     * DESCRIPTION:
      * Retrieves the text displayed in the gallons EditText and 
      * stores the value in the gas record.
      */
@@ -363,7 +349,6 @@ View.OnFocusChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Calculate the cost, price, or gallons value based on 
      * current data entry mode.
      * @return false if calculation is not valid
@@ -389,7 +374,6 @@ View.OnFocusChangeListener {
     }
 
     /**
-     * DESCRIPTION:
      * Indicate that a calculation error has occurred during data validation.
      */
     private void setCalculationError() {
@@ -414,7 +398,6 @@ View.OnFocusChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Set the form values based on the GasRecord data values. 
      */
     protected void setData() {
@@ -435,11 +418,10 @@ View.OnFocusChangeListener {
     }
 
     /**
-     * DESCRIPTION:
      * Get the current data values from the form after user edit,
      * validate them, and update the GasRecord being edited.
      * 
-     * @return boolean - indicates if form data is valid (valid=true)
+     * @return Indicates if form data is valid (valid=true)
      */
     protected boolean getData() {
     	
@@ -511,11 +493,10 @@ View.OnFocusChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Evaluate the data and, if necessary, confirm that the user intended 
      * to enter values that are in range but seem odd for the current 
      * situation.
-     * @param id - the id of the last confirmation dialog displayed (0 = starting point) 
+     * @param id The id of the last confirmation dialog displayed (0 = starting point) 
      * @return true if all data values are acceptable/confirmed.
      */
     protected boolean confirmData(int id) {
@@ -539,18 +520,16 @@ View.OnFocusChangeListener {
     }
 
     /**
-     * DESCRIPTION:
      * Called when the CANCEL button has been clicked.
-     * @param view
+     * @param view View
      */
     public void clickedCancel(View view) {
     	returnResult(Activity.RESULT_CANCELED);
     }
     
     /**
-     * DESCRIPTION:
      * Called when the OK button has been clicked (user is done editing data).
-     * @param view
+     * @param view View
      */
     public void clickedOk(View view) {
     	
@@ -567,10 +546,9 @@ View.OnFocusChangeListener {
     }
     
 	/**
-	 * DESCRIPTION:
 	 * Called when the MODE button has been clicked to change
 	 * data entry mode.
-	 * @param view
+     * @param view View
 	 */
 	public void clickedMode(View view) {
 		hideSoftKeyboard();
@@ -578,7 +556,6 @@ View.OnFocusChangeListener {
     }
 	
 	/**
-	 * DESCRIPTION:
 	 * Called when user selects a data entry mode value from the dialog.
 	 * @see com.github.wdkapps.fillup.DataEntryModeDialog.Listener#onDataEntryModeDialogResponse(int, com.github.wdkapps.fillup.DataEntryModeDialog.Result)
 	 */
@@ -602,9 +579,8 @@ View.OnFocusChangeListener {
 
 
 	/**
-	 * DESCRIPTION:
 	 * Called when the EDIT DATE button is clicked.
-     * @param view
+     * @param view View
 	 */
 	public void clickedEditDate(View view) {
 		// start an Activity to edit the date/time
@@ -614,7 +590,6 @@ View.OnFocusChangeListener {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Called when a user response has been obtained from a confirmation dialog.
 	 * @see com.github.wdkapps.fillup.ConfirmationDialog.Listener#onConfirmationDialogResponse(int, boolean)
 	 */
@@ -631,9 +606,8 @@ View.OnFocusChangeListener {
 	}
     	
     /**
-     * DESCRIPTION:
      * Returns results the caller and closes this Activity.
-     * @param resultCode - the integer result code to return to caller.
+     * @param resultCode The integer result code to return to caller.
      */
     protected void returnResult(int resultCode) {
 
@@ -649,7 +623,6 @@ View.OnFocusChangeListener {
     }
     
     /**
-     * DESCRIPTION:
      * Dialog box integer ID constants
      * @see #onCreateDialog(int)
      */
@@ -658,7 +631,6 @@ View.OnFocusChangeListener {
     protected static final int DIALOG_SELECT_DATA_ENTRY_MODE = 3;
 
     /**
-     * DESCRIPTION:
      * Called as needed by the framework to create dialog boxes used by the Activity.
      * Each dialog box is referenced by a locally defined id integer. 
      * @see android.app.Activity#onCreateDialog(int)
@@ -700,14 +672,12 @@ View.OnFocusChangeListener {
     }
 
 	/**
-	 * DESCRIPTION:
 	 * Request code constants for onActivityResult()
 	 * @see #onActivityResult(int, int, Intent)
 	 */
 	private static final int EDIT_DATE_TIME_REQUEST = 1;
 
     /**
-     * DESCRIPTION:
      * Called when an activity launched by this activity exits, giving the 
      * requestCode it was started with, the resultCode it returned, and any 
      * additional data from it.
@@ -736,7 +706,6 @@ View.OnFocusChangeListener {
     }
 
 	/**
-	 * DESCRIPTION:
 	 * Called when the focus state of a view has changed.
 	 * @see android.view.View.OnFocusChangeListener#onFocusChange(android.view.View, boolean)
 	 */
@@ -760,7 +729,6 @@ View.OnFocusChangeListener {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Creates a container for TextWatcher instances that listen for and handle changes for the
 	 * EditText fields.
 	 * @return TextWatcher
@@ -787,7 +755,6 @@ View.OnFocusChangeListener {
 	}
 
     /**
-     * DESCRIPTION:
      * Dismisses the soft keyboard.
      */
     private void hideSoftKeyboard() {

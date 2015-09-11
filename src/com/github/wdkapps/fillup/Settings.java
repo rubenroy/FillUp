@@ -38,7 +38,6 @@ import android.preference.Preference.OnPreferenceClickListener;
 import android.util.Log;
 
 /**
- * DESCRIPTION:
  * An Activity to display and modify application settings/preferences. 
  */
 public class Settings extends PreferenceActivity implements OnSharedPreferenceChangeListener {
@@ -54,7 +53,6 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
 	private static final String TAG = Settings.class.getName(); 
 
 	/**
-	 * DESCRIPTION:
 	 * Creates the Activity.
 	 * @see android.preference.PreferenceActivity#onCreate(android.os.Bundle)
 	 */
@@ -130,7 +128,6 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Called when a preference value changes.
 	 * @see android.content.SharedPreferences.OnSharedPreferenceChangeListener#onSharedPreferenceChanged(android.content.SharedPreferences, java.lang.String)
 	 */
@@ -160,9 +157,8 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns the version for this application package.
-	 * @return the package version String
+	 * @return The package version String
 	 */
 	private String getPackageVersion() {
 		String value = null;
@@ -177,9 +173,8 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
 	}
 	
     /**
-     * DESCRIPTION:
      * Returns the build date for this application package.
-     * @return the package build date formatted as a String.
+     * @return The package build date formatted as a String.
      */
     private String getBuildDate() {
 
@@ -200,9 +195,8 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
     }
     
     /**
-     * DESCRIPTION:
      * Returns the database version for this application (actual and desired).
-     * @return the database version formatted as a String.
+     * @return The database version formatted as a String.
      */
     private String getDatabaseVersion() {
     	String value = null;
@@ -219,10 +213,9 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
     }
     
     /**
-     * DESCRIPTION:
      * Returns flag to indicate whether entering a value for cost
      * is required when editing/creating a gas record.
-     * @return boolean - true if cost entry is required.
+     * @return true if cost entry is required.
      */
     public static boolean isCostRequired() {
 		Context context = App.getContext();
@@ -232,10 +225,9 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
     }
 
     /**
-     * DESCRIPTION:
      * Returns flag to indicate whether cost value should be
      * displayed in the gas log.
-     * @return boolean - true if cost value should be displayed.
+     * @return true if cost value should be displayed.
      */
     public static boolean isCostDisplayable() {
 		Context context = App.getContext();
@@ -245,10 +237,9 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
     }
 
     /**
-     * DESCRIPTION:
      * Returns flag to indicate whether notes value should be
      * displayed in the gas log.
-     * @return boolean - true if notes value should be displayed.
+     * @return true if notes value should be displayed.
      */
     public static boolean isNotesDisplayable() {
 		Context context = App.getContext();
@@ -258,10 +249,9 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
     }
     
     /**
-     * DESCRIPTION:
      * Retrieve a String value from the preferences.
-     * @param key - the name of the preference to retrieve
-     * @param defaultValue - vale to return if preference does not exist
+     * @param key The name of the preference to retrieve
+     * @param defaultValue Value to return if preference does not exist
      * @return String
      */
     public static String getString(String key, String defaultValue) {
@@ -271,10 +261,9 @@ public class Settings extends PreferenceActivity implements OnSharedPreferenceCh
     }
     
     /**
-     * DESCRIPTION:
      * Set a String value in the preferences.
-     * @param key - the name of the preference to set
-     * @param value - the new value for the preference
+     * @param key The name of the preference to set
+     * @param value The new value for the preference
      */
     public static void setString(String key, String value) {
 		Context context = App.getContext();

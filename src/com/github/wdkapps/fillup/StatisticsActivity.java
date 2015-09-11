@@ -39,7 +39,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 /**
- * DESCRIPTION:
  * Implements an Activity that calculates and displays statistics for 
  * gas record data for a specified vehicle.
  */
@@ -68,7 +67,6 @@ public class StatisticsActivity extends Activity implements OnSharedPreferenceCh
 	private HtmlData report;
 	
     /**
-     * DESCRIPTION:
      * Called when the Activity is created.
      * @see android.app.ActivityGroup#onCreate(android.os.Bundle)
      */
@@ -114,7 +112,6 @@ public class StatisticsActivity extends Activity implements OnSharedPreferenceCh
 	
 	
 	/**
-	 * DESCRIPTION:
 	 * Generates the statistics report from the monthly data.
 	 */
 	private void generateReport() {
@@ -123,7 +120,6 @@ public class StatisticsActivity extends Activity implements OnSharedPreferenceCh
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Display a StatisticsReport for the current monthly data set in the WebView.
 	 */
 	private void displayReport() {
@@ -131,7 +127,6 @@ public class StatisticsActivity extends Activity implements OnSharedPreferenceCh
 	}
 
 	/**
-     * DESCRIPTION:
      * Initialize the contents of the Activity's standard options menu. 
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
      */
@@ -142,7 +137,6 @@ public class StatisticsActivity extends Activity implements OnSharedPreferenceCh
 	}
 	
     /**
-     * DESCRIPTION:
      * Called when an item in the options menu is selected.
      * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
      */
@@ -170,9 +164,8 @@ public class StatisticsActivity extends Activity implements OnSharedPreferenceCh
     }
     
     /**
-     * DESCRIPTION:
      * Return the name and path to a file for storage statistics report data.
-     * @return the File.
+     * @return The File.
      */
     protected File getReportFile() {
     	
@@ -186,10 +179,9 @@ public class StatisticsActivity extends Activity implements OnSharedPreferenceCh
     }
     
     /**
-     * DESCRIPTION:
      * Creates a statistics report file containing the report html data.
-     * @param file - the report File to create.
-     * @return boolean - true if file creation successful.
+     * @param file The report File to create.
+     * @return true if file creation successful.
      */
     private boolean createReportFile(File file) {
     	boolean status = false;
@@ -207,7 +199,6 @@ public class StatisticsActivity extends Activity implements OnSharedPreferenceCh
     }
     
     /**
-     * DESCRIPTION:
      * Create a file containing statistics report data (HTML) and prompt
      * the user for a method to share the file. 
      */
@@ -230,7 +221,6 @@ public class StatisticsActivity extends Activity implements OnSharedPreferenceCh
     }
 
 	/**
-	 * DESCRIPTION:
 	 * Called when a shared preference is changed, added, or removed.
 	 * @see android.content.SharedPreferences.OnSharedPreferenceChangeListener#onSharedPreferenceChanged(android.content.SharedPreferences, java.lang.String)
 	 */

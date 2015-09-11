@@ -36,7 +36,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * DESCRIPTION:
  * Implements a custom View representing a gas gauge with a movable hand. The
  * hand position is a float value with range from 0.0 (empty) to 1.0 (full).<p>
  * 
@@ -48,7 +47,6 @@ import android.view.View;
 public class GasGauge extends View {
 	
     /**
-     * DESCRIPTION:
      * Interface definition for a callback to be invoked when the gauge
      * hand position changes.
      */
@@ -86,9 +84,8 @@ public class GasGauge extends View {
 	private boolean interactive = true;
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of GasGauge.
-	 * @param context
+	 * @param context Context
  	 * @see android.view.View#View(android.content.Context)
 	 */
 	public GasGauge(Context context) {
@@ -97,10 +94,9 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of GasGauge.
-	 * @param context
-	 * @param attrs
+	 * @param context Context
+	 * @param attrs	Attributes
 	 * @see android.view.View#View(android.content.Context,android.util.AttributeSet)
 	 */
 	public GasGauge(Context context, AttributeSet attrs) {
@@ -109,11 +105,10 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of GasGauge.
-	 * @param context
-	 * @param attrs
-	 * @param defStyle
+	 * @param context Context
+	 * @param attrs	Attributes
+	 * @param defStyle DefStyle
 	 * @see android.view.View#View(android.content.Context,android.util.AttributeSet,int)
 	 */
 	public GasGauge(Context context, AttributeSet attrs, int defStyle) {
@@ -122,16 +117,14 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Register a callback to be invoked when the hand position changes.
-	 * @param listener - the current listener to attach to this view (null=none)
+	 * @param listener The current listener to attach to this view (null=none)
 	 */
 	public void setOnHandPositionChangedListener(OnHandPositionChangedListener listener) {
 		handPositionChangedListener = listener;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Saves the current state of the view. 
 	 * @see android.view.View#onRestoreInstanceState(android.os.Parcelable)
 	 */
@@ -150,7 +143,6 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Restores the state of the view.
 	 * @see android.view.View#onSaveInstanceState()
 	 */
@@ -170,10 +162,9 @@ public class GasGauge extends View {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Initialize the view from specified attribute values.
-	 * @param context
-	 * @param attrs - the set of attribute values.
+	 * @param context Context
+	 * @param attrs The set of attribute values.
 	 */
 	private void init(Context context, AttributeSet attrs) {
 		
@@ -195,7 +186,6 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Initialize the view to default attribute values.
 	 */
 	private void init() {
@@ -209,7 +199,6 @@ public class GasGauge extends View {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Disables hardware acceleration when drawing this view. 
 	 * This is a workaround for a problem with hardware acceleration in Android 4.2.
 	 * The hand path is not being drawn with hardware acceleration enabled on a Nexus 7.
@@ -233,7 +222,6 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Initialize the tools required for drawing the view.
 	 */
 	private void initDrawingTools() {
@@ -257,7 +245,6 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Measures the view and its content to determine the measured width and 
 	 * the measured height. 
 	 * @see android.view.View#onMeasure(int, int)
@@ -283,11 +270,10 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Selects view size based on specified MesaureSpec mode.
-	 * @param mode - the MesasureSpec mode integer.
-	 * @param size - the desired view size integer.
-	 * @return - the selected view size integer.
+	 * @param mode The MesasureSpec mode integer.
+	 * @param size The desired view size integer.
+	 * @return The selected view size integer.
 	 */
 	private int chooseDimension(int mode, int size) {
 		if (mode == MeasureSpec.AT_MOST || mode == MeasureSpec.EXACTLY) {
@@ -298,20 +284,18 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Returns a preferred size for the view in case size
 	 * is not specified.
-	 * @return - preferred view size integer.
+	 * @return Preferred view size integer.
 	 */
 	private int getPreferredSize() {
 		return 200;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Calculates the angle to draw the hand on the canvas given the hand position.
-	 * @param position - the hand position (range = 0.0 to 1.0).
-	 * @return - the angle to draw the hand (range = -50 to +50 degrees)
+	 * @param position The hand position (range = 0.0 to 1.0).
+	 * @return The angle to draw the hand (range = -50 to +50 degrees)
 	 */
 	private float positionToAngle(float position) {
 		// range for hand angle is 100 degrees
@@ -323,10 +307,9 @@ public class GasGauge extends View {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Draws the image of the gauge's hand on a canvas to reflect its 
 	 * current position. 
-	 * @param canvas - the canvas to draw the hand image on.
+	 * @param canvas The canvas to draw the hand image on.
 	 */
 	private void drawHand(Canvas canvas) {
 		float handAngle = positionToAngle(handPosition);
@@ -337,9 +320,8 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Draws the background image for the gauge on a canvas (gauge rim, meter, etc).
-	 * @param canvas - the canvas to draw the background image on.
+	 * @param canvas The canvas to draw the background image on.
 	 */
 	private void drawBackground(Canvas canvas) {
 		final String tag = TAG + ".drawBackground()";
@@ -351,7 +333,6 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Draws the view.
 	 * @see android.view.View#onDraw(android.graphics.Canvas)
 	 */
@@ -371,7 +352,6 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Called during layout when the size of this view has changed.
 	 * @see android.view.View#onSizeChanged(int, int, int, int)
 	 */
@@ -383,7 +363,6 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Creates the background image bitmap from an image file and scales it 
 	 * to fit the current size of the view.
 	 */
@@ -402,16 +381,14 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Determines if the gauge hand needs to move in order to be at the target position.
-	 * @return - boolean (true = needs to move)
+	 * @return (true = needs to move)
 	 */
 	private boolean handNeedsToMove() {
 		return Math.abs(handPosition - handTarget) > 0.01f;
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Simulates real analog gauge hand movement by periodically moving the gauge 
 	 * hand from its current position toward its target position given the two 
 	 * positions and the dynamic physics model attributes defined for hand 
@@ -450,11 +427,10 @@ public class GasGauge extends View {
 	}
 
 	/**
-	 * DESCRIPTION:
 	 * Sets the target position for the gauge hand to a specified value. 
 	 * Invalidates the view to cause the hand to start moving from its 
 	 * current position toward the target position.
-	 * @param position - the desired target hand position.
+	 * @param position The desired target hand position.
 	 */
 	public void setHandTarget(float position) {
 		if (position < emptyPosition) {
@@ -467,11 +443,10 @@ public class GasGauge extends View {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Sets the current position for the gauge hand to a specified value. 
 	 * Invalidates the view to cause the hand to immediately be drawn at
 	 * the new position.
-	 * @param position - the desired hand position.
+	 * @param position The desired hand position.
 	 */
 	public void setHandPosition(float position) {
 		if (position < emptyPosition) {
@@ -484,26 +459,23 @@ public class GasGauge extends View {
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Returns the current position of the gauge hand.
-	 * @return - the hand position (float, range 0.0 [empty] to 1.0 [full])
+	 * @return The hand position (float, range 0.0 [empty] to 1.0 [full])
 	 */
 	public float getHandPosition() {
 		return this.handPosition;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Setter for a flag specifying whether the gauge is interactive,
 	 * (i.e. allows user to change hand position)
-	 * @param interactive - true = allows gauge hand changes.
+	 * @param interactive true = allows gauge hand changes.
 	 */
 	public void setInteractive(boolean interactive) {
 		this.interactive = interactive;
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Called when the screen is touched. Moves the gauge hand accordingly.
 	 * @see android.view.View#onTouchEvent(android.view.MotionEvent)
 	 */

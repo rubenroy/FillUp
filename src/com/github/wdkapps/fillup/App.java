@@ -29,7 +29,6 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.util.Log;
 
 /**
- * DESCRIPTION:
  * Convenience class to simplify access to application attributes.
  * NOTE: requires setting the android:name attribute of the <application> 
  * tag in the AndroidManifest.xml to point to this class, 
@@ -44,7 +43,6 @@ public class App extends Application {
     private static Context mContext;
 
     /**
-     * DESCRIPTION:
      * Called when the application starts.
      * @see android.app.Application#onCreate()
      */
@@ -55,27 +53,24 @@ public class App extends Application {
     }
 
     /**
-     * DESCRIPTION:
      * Returns the Context for this application instance.
-     * @return the application Context.
+     * @return The application Context.
      */
     public static Context getContext(){
         return mContext;
     }
     
     /**
-     * DESCRIPTION:
      * Returns the Locale that the user has configured the device for.
-     * @return the current Locale.
+     * @return The current Locale.
      */
     public static Locale getLocale() {
     	return mContext.getResources().getConfiguration().locale;
     }
     
     /**
-     * DESCRIPTION:
      * Returns the Android versionCode for the application.
-     * @return the version code integer value (-1 if an error occurred)
+     * @return The version code integer value (-1 if an error occurred)
      */
     public static int getVersionCode() {
     	String pkgname = mContext.getPackageName();
@@ -91,7 +86,6 @@ public class App extends Application {
     }
     
     /**
-     * DESCRIPTION:
      * Determine if the update.html file exists in the jar (apk).
      * @return true if update.html exists.
      */

@@ -28,7 +28,6 @@ import android.webkit.WebView;
 import android.widget.Button;
 
 /**
- * DESCRIPTION:
  * Implements an Android Activity class to display information
  * from an HTML asset file. 
  */
@@ -41,7 +40,6 @@ public class HtmlViewerActivity extends Activity {
 	public final static String RETURN_RESULT = HtmlViewerActivity.class.getName() + ".RETURN_RESULT";
 	
     /**
-     * DESCRIPTION:
      * Called when the activity is starting.
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -76,7 +74,6 @@ public class HtmlViewerActivity extends Activity {
     }
     
     /**
-     * DESCRIPTION
      * Make the Back Key navigate to the previously viewed HTML file
      * (if possible) instead of exiting the Activity. 
      * @see android.app.Activity#onKeyDown(int, android.view.KeyEvent)

@@ -40,7 +40,6 @@ import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
 /**
- * DESCRIPTION:
  * Implements an abstract log for the storage of gasoline records. Provides 
  * CRUD methods to create, read, update, and delete gasoline records from 
  * the log. The underlying storage mechanism is an SQLite database.
@@ -134,7 +133,6 @@ public class GasLog {
     private final SQLiteDatabase db;
     
     /**
-     * DESCRIPTION:
      * Determines if the log database file currently exists.
      * @return true if file exists, false otherwise.
      */
@@ -144,9 +142,8 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Returns a single instance, creating it if necessary.
-     * @return GasLog - singleton instance.
+     * @return GasLog Singleton instance.
      */
     public static GasLog getInstance() {
     	if (instance == null) {
@@ -156,7 +153,6 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Destroys any existing log instance, closing the database.
      */
     public void finalize() throws Throwable {
@@ -168,7 +164,6 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Constructs an instance of GasLog (private to enforce singleton).
      */
     private GasLog() {
@@ -178,8 +173,7 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
-     * Returns the database version number reported by SQLite. 
+     * Returns the database version number reported by SQLite.
      * @return the database version.
      */
     public int getDatabaseVersion() {
@@ -187,11 +181,10 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Convenience method to test assertion.
-     * @param assertion - an asserted boolean condition. 
-     * @param tag - a tag String identifying the calling method.
-     * @param mdg - an error message to display/log.
+     * @param assertion An asserted boolean condition. 
+     * @param tag A tag String identifying the calling method.
+     * @param msg An error message to display/log.
      * @throws RuntimeException if the assertion is false
      */
     private void ASSERT(boolean assertion, String tag, String msg) {
@@ -203,12 +196,11 @@ public class GasLog {
     }
 
     /**
-     * DESCRIPTION:
      * Convenience method to convert a GasRecord instance to a set of key/value
      * pairs in a ContentValues instance utilized by SQLite access methods.
      *
-     * @param record - the GasRecord to convert.
-     * @return a ContentValues instance representing the specified GasRecord.
+     * @param record The GasRecord to convert.
+     * @return A ContentValues instance representing the specified GasRecord.
      */
     private ContentValues getContentValues(GasRecord record) {
     	ContentValues values = new ContentValues();
@@ -225,12 +217,11 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Convenience method to convert a Vehicle instance to a set of key/value
      * pairs in a ContentValues instance utilized by SQLite access methods.
      *
-     * @param vehicle - the Vehicle to convert.
-     * @return a ContentValues instance representing the specified Vehicle.
+     * @param vehicle The Vehicle to convert.
+     * @return A ContentValues instance representing the specified Vehicle.
      */
     private ContentValues getContentValues(Vehicle vehicle) {
     	ContentValues values = new ContentValues();
@@ -241,11 +232,10 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Convenience method to create a GasRecord instance from values read
      * from the database.
-     * @param c - a Cursor containing results of a database query. 
-     * @return a GasRecord instance (null if no data).
+     * @param c A Cursor containing results of a database query. 
+     * @return A GasRecord instance (null if no data).
      */
     private GasRecord getRecordFromCursor(Cursor c) {
     	final String tag = TAG+".getRecordFromCursor()";
@@ -282,11 +272,10 @@ public class GasLog {
     }
 
     /**
-     * DESCRIPTION:
      * Convenience method to create a Vehicle instance from values read
      * from the database.
-     * @param c - a Cursor containing results of a database query. 
-     * @return a Vehicle instance (null if no data).
+     * @param c A Cursor containing results of a database query. 
+     * @return A Vehicle instance (null if no data).
      */
     private Vehicle getVehicleFromCursor(Cursor c) {
     	Vehicle vehicle = null;
@@ -303,10 +292,9 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Creates a vehicle in the log.
-     * @param vehicle - the Vehicle to create.
-     * @return boolean flag indicating success/failure (true=success)
+     * @param vehicle The Vehicle to create.
+     * @return Flag indicating success/failure (true=success)
      */
     public boolean createVehicle(Vehicle vehicle) {
     	final String tag = TAG+".createVehicle()";
@@ -326,10 +314,9 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Updates a vehicle in the log.
-     * @param vehicle - the Vehicle to update.
-     * @return boolean flag indicating success/failure (true=success)
+     * @param vehicle The Vehicle to update.
+     * @return Flag indicating success/failure (true=success)
      */
     public boolean updateVehicle(Vehicle vehicle) {
     	final String tag = TAG+".updateVehicle()";
@@ -351,9 +338,8 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Reads all vehicles contained in the log.
-     * @return a List of all Vehicle's in the log (empty if none exist).
+     * @return A List of all Vehicle's in the log (empty if none exist).
      */
     public List<Vehicle> readAllVehicles() {
     	final String tag = TAG+".readAllVehicles()";
@@ -391,10 +377,9 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Deletes a specified vehicle from the log.
-     * @param vehicle - the Vehicle to delete.
-     * @return boolean flag indicating success/failure (true=success)
+     * @param vehicle The Vehicle to delete.
+     * @return Flag indicating success/failure (true=success)
      */
     public boolean deleteVehicle(Vehicle vehicle) {
     	final String tag = TAG+".deleteVehicle()";
@@ -421,10 +406,9 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Determines the current odometer value in the log for a specific vehicle.
-     * @param vehicle - the Vehicle being evaluated.
-     * @return the current odometer value (int) in the log for the vehicle. (-1 if no data)
+     * @param vehicle The Vehicle being evaluated.
+     * @return The current odometer value (int) in the log for the vehicle. (-1 if no data)
      */
     public int readCurrentOdometer(Vehicle vehicle) {
     	final String tag = TAG+".readCurrentOdometer()";
@@ -464,10 +448,9 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Creates a gasoline record in the log.
-     * @param record - the GasRecord to create.
-     * @return boolean flag indicating success/failure (true=success)
+     * @param record The GasRecord to create.
+     * @return Flag indicating success/failure (true=success)
      */
     public boolean createRecord(Vehicle vehicle, GasRecord record) {
     	final String tag = TAG+".createRecord()";
@@ -490,10 +473,9 @@ public class GasLog {
     }    	
     
     /**
-     * DESCRIPTION:
      * Updates a gasoline record in the log.
-     * @param record - the GasRecord to update.
-     * @return boolean flag indicating success/failure (true=success)
+     * @param record The GasRecord to update.
+     * @return Flag indicating success/failure (true=success)
      */
     public boolean updateRecord(GasRecord record) {
     	final String tag = TAG+".updateRecord()";
@@ -515,10 +497,9 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Reads all gasoline records contained in the log for a specific vehicle.
-     * @param vehicle - the Vehicle to read the records for. 
-     * @return a List of all GasRecord's in the log for the vehicle (empty if none exist).
+     * @param vehicle The Vehicle to read the records for. 
+     * @return A List of all GasRecord's in the log for the vehicle (empty if none exist).
      */
     public List<GasRecord> readAllRecords(Vehicle vehicle) {
        	final String tag = TAG+".readAllRecords()";
@@ -566,10 +547,9 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Deletes a specified gasoline record from the log.
-     * @param record - the GasRecord to delete.
-     * @return boolean flag indicating success/failure (true=success)
+     * @param record The GasRecord to delete.
+     * @return Flag indicating success/failure (true=success)
      */
     public boolean deleteRecord(GasRecord record) {
 
@@ -592,10 +572,9 @@ public class GasLog {
     }
 
     /**
-     * DESCRIPTION:
      * Deletes all gasoline records from the log for a specific vehicle.
-     * @param vehicle - the Vehicle to delete records for.
-     * @return boolean flag indicating success/failure (true=success)
+     * @param vehicle The Vehicle to delete records for.
+     * @return Flag indicating success/failure (true=success)
      */
     public boolean deleteAllRecords(Vehicle vehicle) {
     	final String tag = TAG+".deleteAllRecords()";
@@ -614,12 +593,11 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Reads gasoline record data from a specified ASCII CSV formatted file
      * into the log for a specific vehicle. 
-     * @param vehicle - the Vehicle to import records for.
-     * @param file - the ASCII CSV data file to import.
-     * @return boolean flag indicating success/failure (true=success)
+     * @param vehicle The Vehicle to import records for.
+     * @param file The ASCII CSV data file to import.
+     * @return Flag indicating success/failure (true=success)
      */
     public boolean importData(Vehicle vehicle, InputStream file) {
     	
@@ -668,11 +646,10 @@ public class GasLog {
     }
     
     /**
-     * DESCRIPTION:
      * Copies all existing log data for a specific vehicle to an ASCII CSV file.
-     * @param vehicle - the Vehicle to export data for.
-     * @param file - the ASCII CSV file to create.
-     * @return boolean flag indicating success/failure (true=success)
+     * @param vehicle The Vehicle to export data for.
+     * @param file The ASCII CSV file to create.
+     * @return Flag indicating success/failure (true=success)
      */
     public boolean exportData(Vehicle vehicle, File file) {
     	

@@ -31,7 +31,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * DESCRIPTION:
  * An Android ArrayAdapter for the purpose of displaying a list
  * of Java File instances.
  */
@@ -44,10 +43,9 @@ public class FileSelectionListAdapter extends ArrayAdapter<File>{
 	private final List<File> files;
 
 	/**
-	 * DESCRIPTION:
 	 * Constructs an instance of FileSelectionListAdapter.
-	 * @param context - Context for owner of this adapter.
-	 * @param files - List of Java File instances being displayed.
+	 * @param context Context for owner of this adapter.
+	 * @param files List of Java File instances being displayed.
 	 */
 	public FileSelectionListAdapter(Context context, List<File> files) {
 		super(context, R.layout.row_file_selection, files);
@@ -56,7 +54,6 @@ public class FileSelectionListAdapter extends ArrayAdapter<File>{
 	}
 	
 	/**
-	 * DESCRIPTION:
 	 * Constructs and populates a View for display of the File at the index
 	 * of the List specified by the position parameter.
 	 * @see android.widget.ArrayAdapter#getView(int, android.view.View, android.view.ViewGroup)
